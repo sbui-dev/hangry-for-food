@@ -12,8 +12,12 @@ import Alamofire
 import SwiftyJSON
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
-
-    let addy = ""
+    
+    let AK = "5Q2kfy87piLkOggEBScFBbEuQYe1xB8p0fGvOZJvMGPNpr5UppfZQL3HbAEFbzFpBEGi3F_TGhlH1pheY_kMZIw0NM0cckMB62l-fOv7onO5MsAMLrhrA5dXIWKgXHYx"
+    
+    var latitude = ""
+    var longitude = ""
+    
     
     @IBOutlet weak var foodSearch: UISearchBar!
     
@@ -23,21 +27,33 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        //locationManager.requestLocation()
     }
 
     @IBAction func hangryPressed(_ sender: Any) {
-        getRestaurantData(url: addy)
+        getRestaurantData()
     }
 
     // MARK: - Networking
     /***************************************************************/
     
-    func getRestaurantData(url: String) {
-        Alamofire.request(url, method: .get).responseJSON {
+    func getRestaurantData() {
+        let yelpURL = "https://api.yelp.com/v3/businesses/search"
+        let header : [String : String] = ["Authorization" : "Bearer "]
+        
+        let searchParams = ["term" : "restaurant", "latitude" : latitude, "longitude" : longitude, "radius" : "500", "open_now" : "false"]
+        
+        print("Running with params")
+        print(searchParams)
+        Alamofire.request(yelpURL, method : .get, parameters : searchParams, headers : header).responseJSON {
             response in
             if response.result.isSuccess {
                 let dataJSON : JSON = JSON(response.result.value!)
-                
+                print(dataJSON)
                 
             } else {
                 print("Error: \(String(describing: response.result.error))")
@@ -57,12 +73,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
             locationManager.delegate = nil
             
-            let latitude = String(location.coordinate.latitude)
-            let longitude = String(location.coordinate.longitude)
-            
-            //let params : [String : String] = ["lat" : latitude, "lon" : longitude, "appid" : APP_ID]
-            
-            
+            latitude = String(location.coordinate.latitude)
+            longitude = String(location.coordinate.longitude)
         }
     }
     

@@ -8,5 +8,6 @@ target 'hangry' do
   # Pods for hangry
   pod 'SwiftyJSON'
   pod 'Alamofire'
+  pod 'OAuthSwiftAlamofire'
 
 end
