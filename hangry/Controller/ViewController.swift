@@ -35,11 +35,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         
         mapView.delegate = self
+        //getRestaurantData()
     }
 
     @IBAction func hangryPressed(_ sender: Any) {
         getRestaurantData()
+        parseJSON(json : dataJSON)
+        updateUI()
     }
+    
+    @IBAction func mapsPressed(_ sender: Any) {
+        openMaps(coordinate: restaurantData.getMapCoordinate())
+    }
+    
 
     // MARK: - Networking
     /***************************************************************/
@@ -64,15 +72,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 }
             }
         }
-        //print(self.dataJSON)
-        self.parseJSON(json : self.dataJSON)
     }
     
     //MARK: - JSON Parsing
     /***************************************************************/
     
     func parseJSON(json : JSON) {
-        
+        print(dataJSON)
         if var totalResult = json["total"].int {
             // TODO: fix for 0 and 1 result
             totalResult -= 1
@@ -88,9 +94,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             print(restaurantData.name)
             print(restaurantData.address1)
             print(restaurantData.address2)
-            
-            updateUI()
-
+    
         }
         else {
             print("error no result")
@@ -152,14 +156,8 @@ extension ViewController : MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
                  calloutAccessoryControlTapped control: UIControl) {
-        print("annotation selected 1")
         if let location = view.annotation?.coordinate {
-            let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
-            
-            let placemark = MKPlacemark(coordinate: location)
-            let mapItem = MKMapItem(placemark: placemark)
-            //mapItem.name = restaurantData.name
-            mapItem.openInMaps(launchOptions: launchOptions)
+            openMaps(coordinate : location)
         }
         else {
             print("Error opening in map")
@@ -167,12 +165,19 @@ extension ViewController : MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        print("annotationview selected")
-        var view : MKMarkerAnnotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "marker")
+        let view : MKMarkerAnnotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "marker")
         view.canShowCallout = true
         view.calloutOffset = CGPoint(x: -5, y : 5)
         view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         
         return view
+    }
+    
+    func openMaps(coordinate : CLLocationCoordinate2D) {
+        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
+        let placemark = MKPlacemark(coordinate: coordinate)
+        let mapItem = MKMapItem(placemark: placemark)
+        //mapItem.name = restaurantData.name
+        mapItem.openInMaps(launchOptions: launchOptions)
     }
 }
