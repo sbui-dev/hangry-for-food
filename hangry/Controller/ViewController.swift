@@ -12,11 +12,11 @@ import MapKit
 import Alamofire
 import SwiftyJSON
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
-    var latitude : String = ""
-    var longitude : String = ""
-    var dataJSON : JSON = JSON()
+    var currentLatitude : String = ""
+    var currentLongitude : String = ""
+    var dataJSON : JSON = []
 
     @IBOutlet weak var restaurant_name: UILabel!
     @IBOutlet weak var restaurant_address1: UILabel!
@@ -28,7 +28,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestWhenInUseAuthorization()
@@ -46,7 +46,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let yelpURL = "https://api.yelp.com/v3/businesses/search"
         let header : [String : String] = ["Authorization" : "Bearer "]
         
-        let searchParams = ["term" : "restaurant", "latitude" : latitude, "longitude" : longitude, "radius" : "700", "open_now" : "false"]
+        let searchParams = ["term" : "restaurant", "latitude" : currentLatitude, "longitude" : currentLongitude, "radius" : "700", "open_now" : "false"]
         
         print("Running with params")
         print(searchParams)
@@ -112,8 +112,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         // update map
         let coordinateRegion = MKCoordinateRegion(center: restaurantData.getMapCoordinate(),
-                                                  latitudinalMeters: 750, longitudinalMeters: 750)
+                                                  latitudinalMeters: 1500, longitudinalMeters: 1500)
+        
         mapView.setRegion(coordinateRegion, animated: true)
+        
+        let annotation = MKPointAnnotation()
+        annotation.title = restaurantData.name
+        annotation.coordinate = restaurantData.getMapCoordinate()
+        mapView.addAnnotation(annotation)
     }
     
 
@@ -126,13 +132,27 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
             locationManager.delegate = nil
             
-            latitude = String(location.coordinate.latitude)
-            longitude = String(location.coordinate.longitude)
+            currentLatitude = String(location.coordinate.latitude)
+            currentLongitude = String(location.coordinate.longitude)
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        
+        print("Location failed")
+        restaurant_name.text = "Error: Could not detect location"
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        print("annotation selected 1")
+        if let location = view.annotation?.coordinate {
+            let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
+            
+            let placemark = MKPlacemark(coordinate: location)
+            let mapItem = MKMapItem(placemark: placemark)
+            mapItem.openInMaps(launchOptions: launchOptions)
+        }
+        else {
+            print("Error opening in map")
+        }
     }
 }
-

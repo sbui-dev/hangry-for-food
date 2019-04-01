@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,29 +15,29 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="hangry" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'm hangry!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zt-gy-48V">
-                                <rect key="frame" x="25" y="272" width="325" height="35"/>
+                                <rect key="frame" x="25" y="467" width="325" height="35"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feed me!" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnz-f4-kfT">
-                                <rect key="frame" x="25" y="357" width="325" height="35"/>
+                                <rect key="frame" x="25" y="552" width="325" height="35"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rawr!" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pwl-FS-Eap">
-                                <rect key="frame" x="25" y="402" width="325" height="35"/>
+                                <rect key="frame" x="25" y="597" width="325" height="35"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VNE-dP-2Nf">
-                                <rect key="frame" x="123.5" y="497" width="128" height="40"/>
+                                <rect key="frame" x="123.66666666666669" y="642" width="128" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="0W4-hE-lqZ"/>
                                     <constraint firstAttribute="width" constant="128" id="Jtr-tX-4Af"/>
@@ -50,14 +50,19 @@
                                     <action selector="hangryPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gry-BR-Xnj"/>
                                 </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dvn-zP-IF7">
-                                <rect key="frame" x="87" y="56" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dvn-zP-IF7">
+                                <rect key="frame" x="87.666666666666686" y="237" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="8VI-vc-Dnb"/>
+                                    <constraint firstAttribute="height" constant="200" id="H19-sA-TyA"/>
+                                </constraints>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="1zt-gy-48V" firstAttribute="top" secondItem="dvn-zP-IF7" secondAttribute="bottom" constant="30" id="66k-Jy-OEO"/>
                             <constraint firstItem="gnz-f4-kfT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="EyH-RC-YXI"/>
+                            <constraint firstItem="dvn-zP-IF7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FuJ-f1-Tdp"/>
                             <constraint firstItem="VNE-dP-2Nf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KSJ-GE-qeu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gnz-f4-kfT" secondAttribute="trailing" constant="25" id="OCa-92-R20"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pwl-FS-Eap" secondAttribute="trailing" constant="25" id="SUd-qD-i15"/>
@@ -67,7 +72,7 @@
                             <constraint firstItem="VNE-dP-2Nf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="bottom" constant="-150" id="dvT-hq-epC"/>
                             <constraint firstItem="Pwl-FS-Eap" firstAttribute="top" secondItem="gnz-f4-kfT" secondAttribute="bottom" constant="10" id="kj1-jW-jGF"/>
                             <constraint firstItem="gnz-f4-kfT" firstAttribute="top" secondItem="1zt-gy-48V" secondAttribute="bottom" constant="50" id="mZG-Pl-2Ve"/>
-                            <constraint firstItem="VNE-dP-2Nf" firstAttribute="bottom" secondItem="Pwl-FS-Eap" secondAttribute="bottom" constant="100" id="zlL-m6-UAq"/>
+                            <constraint firstItem="VNE-dP-2Nf" firstAttribute="bottom" secondItem="Pwl-FS-Eap" secondAttribute="bottom" constant="50" id="zlL-m6-UAq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
