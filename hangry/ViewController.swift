@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import MapKit
 import Alamofire
 import SwiftyJSON
 
@@ -20,9 +21,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var restaurant_name: UILabel!
     @IBOutlet weak var restaurant_address1: UILabel!
     @IBOutlet weak var restaurant_address2: UILabel!
-    
-    //Instance variables
+    @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
+    let restaurantData = RestaurantData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,23 +76,42 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             
             let rand = Int.random(in: 0 ... totalResult)
             
-            restaurant_name.text = json["businesses"][rand]["name"].string
-            restaurant_name.adjustsFontSizeToFitWidth = true
+            restaurantData.name = json["businesses"][rand]["name"].string!
+            restaurantData.address1 = json["businesses"][rand]["location"]["display_address"][0].string!
+            restaurantData.address2 = json["businesses"][rand]["location"]["display_address"][1].string!
+            restaurantData.latitude = json["businesses"][rand]["coordinates"]["latitude"].double!
+            restaurantData.longitude =  json["businesses"][rand]["coordinates"]["longitude"].double!
             
-            restaurant_address1.text = json["businesses"][rand]["location"]["display_address"][0].string
-            restaurant_address1.adjustsFontSizeToFitWidth = true
+            let restLoc = CLLocationCoordinate2D(latitude: restaurantData.latitude, longitude: restaurantData.longitude )
             
-            restaurant_address2.text = json["businesses"][rand]["location"]["display_address"][1].string
-            restaurant_address2.adjustsFontSizeToFitWidth = true
+            let coordinateRegion = MKCoordinateRegion(center: restLoc,
+                                                      latitudinalMeters: 750, longitudinalMeters: 750)
+            mapView.setRegion(coordinateRegion, animated: true)
             
-            print(json["businesses"][rand]["name"].string)
-            print(json["businesses"][rand]["location"]["display_address"].string)
+            print(restaurantData.name)
+            print(restaurantData.address1)
+            print(restaurantData.address2)
             
         }
         else {
             print("error no result")
         }
     }
+    
+    //MARK: Populate UI
+    /***************************************************************/
+    
+    func updateUI() {
+        restaurant_name.text = restaurantData.name
+        restaurant_name.adjustsFontSizeToFitWidth = true
+        
+        restaurant_address1.text = restaurantData.address1
+        restaurant_address1.adjustsFontSizeToFitWidth = true
+        
+        restaurant_address2.text = restaurantData.address2
+        restaurant_address2.adjustsFontSizeToFitWidth = true
+    }
+    
 
     //MARK: - Location Manager Delegate Methods
     /***************************************************************/
