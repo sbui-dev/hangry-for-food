@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 class RestaurantData {
     var name : String = ""
@@ -17,5 +18,9 @@ class RestaurantData {
     
     init() {
     
+    }
+    
+    func getMapCoordinate() -> CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
 }

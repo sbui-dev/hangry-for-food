@@ -22,6 +22,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var restaurant_address1: UILabel!
     @IBOutlet weak var restaurant_address2: UILabel!
     @IBOutlet weak var mapView: MKMapView!
+    
     let locationManager = CLLocationManager()
     let restaurantData = RestaurantData()
     
@@ -43,7 +44,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func getRestaurantData() {
         let yelpURL = "https://api.yelp.com/v3/businesses/search"
-        let header : [String : String] = ["Authorization" : "Bearer <token>"]
+        let header : [String : String] = ["Authorization" : "Bearer "]
         
         let searchParams = ["term" : "restaurant", "latitude" : latitude, "longitude" : longitude, "radius" : "700", "open_now" : "false"]
         
@@ -82,12 +83,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             restaurantData.latitude = json["businesses"][rand]["coordinates"]["latitude"].double!
             restaurantData.longitude =  json["businesses"][rand]["coordinates"]["longitude"].double!
             
-            let restLoc = CLLocationCoordinate2D(latitude: restaurantData.latitude, longitude: restaurantData.longitude )
-            
-            let coordinateRegion = MKCoordinateRegion(center: restLoc,
-                                                      latitudinalMeters: 750, longitudinalMeters: 750)
-            mapView.setRegion(coordinateRegion, animated: true)
-            
             print(restaurantData.name)
             print(restaurantData.address1)
             print(restaurantData.address2)
@@ -104,6 +99,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     /***************************************************************/
     
     func updateUI() {
+        
+        // update labels
         restaurant_name.text = restaurantData.name
         restaurant_name.adjustsFontSizeToFitWidth = true
         
@@ -112,6 +109,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         restaurant_address2.text = restaurantData.address2
         restaurant_address2.adjustsFontSizeToFitWidth = true
+        
+        // update map
+        let coordinateRegion = MKCoordinateRegion(center: restaurantData.getMapCoordinate(),
+                                                  latitudinalMeters: 750, longitudinalMeters: 750)
+        mapView.setRegion(coordinateRegion, animated: true)
     }
     
 
