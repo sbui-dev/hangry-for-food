@@ -92,6 +92,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             print(restaurantData.address1)
             print(restaurantData.address2)
             
+            updateUI()
+
         }
         else {
             print("error no result")
