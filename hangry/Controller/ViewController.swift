@@ -12,7 +12,7 @@ import MapKit
 import Alamofire
 import SwiftyJSON
 
-class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var currentLatitude : String = ""
     var currentLongitude : String = ""
@@ -33,6 +33,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
+        mapView.delegate = self
     }
 
     @IBAction func hangryPressed(_ sender: Any) {
@@ -119,6 +121,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         let annotation = MKPointAnnotation()
         annotation.title = restaurantData.name
         annotation.coordinate = restaurantData.getMapCoordinate()
+        
         mapView.addAnnotation(annotation)
     }
     
@@ -140,18 +143,36 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         restaurant_name.text = "Error: Could not detect location"
     }
+}
+
+extension ViewController : MKMapViewDelegate {
     
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+    //MARK: MapView
+    /***************************************************************/
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
+                 calloutAccessoryControlTapped control: UIControl) {
         print("annotation selected 1")
         if let location = view.annotation?.coordinate {
             let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
             
             let placemark = MKPlacemark(coordinate: location)
             let mapItem = MKMapItem(placemark: placemark)
+            //mapItem.name = restaurantData.name
             mapItem.openInMaps(launchOptions: launchOptions)
         }
         else {
             print("Error opening in map")
         }
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        print("annotationview selected")
+        var view : MKMarkerAnnotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "marker")
+        view.canShowCallout = true
+        view.calloutOffset = CGPoint(x: -5, y : 5)
+        view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        
+        return view
     }
 }
