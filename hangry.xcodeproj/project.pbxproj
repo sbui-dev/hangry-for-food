@@ -66,7 +66,6 @@
 				66842E622251A644008E6FAA /* Model */,
 				66842E642251A695008E6FAA /* View */,
 				66842E632251A66C008E6FAA /* Controller */,
-				66842E49224F28C9008E6FAA /* AppDelegate.swift */,
 				66842E50224F28CA008E6FAA /* Assets.xcassets */,
 				66842E55224F28CA008E6FAA /* Info.plist */,
 			);
@@ -85,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				66842E4B224F28C9008E6FAA /* ViewController.swift */,
+				66842E49224F28C9008E6FAA /* AppDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
