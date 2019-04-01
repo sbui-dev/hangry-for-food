@@ -138,7 +138,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Location failed")
         restaurant_name.text = "Error: Could not detect location"
     }
     
