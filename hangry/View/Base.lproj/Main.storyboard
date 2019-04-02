@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="GimmeFoodButton"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="AGa-3C-1BL"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="jHA-nr-Ctc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obn-bk-VT3">
@@ -46,14 +46,10 @@
                         <color key="backgroundColor" red="0.70196078429999997" green="0.074509803920000006" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="JxQ-PP-sg3"/>
                     </view>
-                    <connections>
-                        <outlet property="gimmeFoodButton" destination="gdk-aF-D4b" id="5Ue-LW-9Ld"/>
-                        <outlet property="optionsButton" destination="obn-bk-VT3" id="0gm-Ue-6ks"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eAu-bg-otC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1497" y="134"/>
+            <point key="canvasLocation" x="-1498.4000000000001" y="133.5832083958021"/>
         </scene>
         <!--Options-->
         <scene sceneID="jdx-Fy-gN1">
@@ -122,7 +118,7 @@
         <!--Map-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Map" id="BYZ-38-t0r" customClass="ViewController" customModule="hangry" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Map" id="BYZ-38-t0r" customClass="MapViewController" customModule="hangry" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
