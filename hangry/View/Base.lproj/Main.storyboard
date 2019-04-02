@@ -31,8 +31,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="OptionsButton"/>
                                 <connections>
-                                    <action selector="gimmeFoodPressed:" destination="iYv-MD-kDb" eventType="touchUpInside" id="6kr-pH-yMe"/>
-                                    <segue destination="glB-ds-x6I" kind="presentation" modalPresentationStyle="currentContext" id="udi-jY-v9x"/>
+                                    <segue destination="glB-ds-x6I" kind="presentation" modalPresentationStyle="currentContext" id="VV9-It-iIl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hle-OI-ZZH">
@@ -54,12 +53,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eAu-bg-otC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-671.20000000000005" y="135.38230884557723"/>
+            <point key="canvasLocation" x="-1497" y="134"/>
         </scene>
         <!--Options-->
         <scene sceneID="jdx-Fy-gN1">
             <objects>
-                <viewController title="Options" id="glB-ds-x6I" customClass="OptionsViewController" customModule="hangry" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Options" modalPresentationStyle="overCurrentContext" id="glB-ds-x6I" customClass="OptionsViewController" customModule="hangry" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F2A-wE-DZT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,6 +71,9 @@
                                         <rect key="frame" x="75" y="272" width="91" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Save Options"/>
+                                        <connections>
+                                            <segue destination="iYv-MD-kDb" kind="show" animates="NO" id="brW-wA-1CH"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -83,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X18-vN-6yZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-671.20000000000005" y="891.90404797601207"/>
+            <point key="canvasLocation" x="-671" y="899"/>
         </scene>
         <!--Settings-->
         <scene sceneID="cEf-7J-kkB">
@@ -230,4 +232,7 @@
             <point key="canvasLocation" x="210" y="135"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="brW-wA-1CH"/>
+    </inferredMetricsTieBreakers>
 </document>
