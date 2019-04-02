@@ -35,11 +35,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         
         mapView.delegate = self
-        //getRestaurantData()
     }
 
     @IBAction func hangryPressed(_ sender: Any) {
-        getRestaurantData()
+        //getRestaurantData()
         parseJSON(json : dataJSON)
         updateUI()
     }
@@ -55,7 +54,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func getRestaurantData() {
         let yelpURL = "https://api.yelp.com/v3/businesses/search"
         let header : [String : String] = ["Authorization" : "Bearer "]
-        
         let searchParams = ["term" : "restaurant", "latitude" : currentLatitude, "longitude" : currentLongitude, "radius" : "700", "open_now" : "false"]
         
         print("Running with params")
@@ -148,6 +146,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             
             currentLatitude = String(location.coordinate.latitude)
             currentLongitude = String(location.coordinate.longitude)
+            
+            getRestaurantData()
         }
     }
     
