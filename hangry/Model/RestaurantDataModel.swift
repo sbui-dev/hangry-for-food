@@ -9,8 +9,12 @@
 import Foundation
 import MapKit
 import Contacts
+import SwiftyJSON
 
 class RestaurantData {
+    
+    var dataJSON : JSON = []
+    
     var name : String = ""
     var address1 : String = ""
     var address2 : String = ""
@@ -24,8 +28,51 @@ class RestaurantData {
     var latitude : Double = 0.0
     var longitude : Double = 0.0
     
-    init() {
+    init(json : JSON) {
+        dataJSON = json
+    }
     
+    //MARK: - JSON Parsing
+    /***************************************************************/
+    
+    func randomRestaurantData() {
+        print(dataJSON)
+        if var totalResult = dataJSON["total"].int {
+            if totalResult == 0 {
+                return
+            }
+            // TODO: fix for 0 and 1 result
+            totalResult -= 1
+            
+            // randomly select an entry
+            var rand = Int.random(in: 0 ... totalResult)
+            
+            // catch case with nil data
+            while dataJSON["businesses"][rand]["name"].string == nil {
+                rand = Int.random(in: 0 ... totalResult)
+            }
+            
+            print("random number = \(rand)")
+            
+            // get data from entry
+            name = dataJSON["businesses"][rand]["name"].string!
+            street = dataJSON["businesses"][rand]["location"]["address1"].string!
+            city = dataJSON["businesses"][rand]["location"]["city"].string!
+            state = dataJSON["businesses"][rand]["location"]["state"].string!
+            postalCode = dataJSON["businesses"][rand]["location"]["zip_code"].string!
+            country = dataJSON["businesses"][rand]["location"]["country"].string!
+            address1 = dataJSON["businesses"][rand]["location"]["display_address"][0].string!
+            address2 = dataJSON["businesses"][rand]["location"]["display_address"][1].string!
+            latitude = dataJSON["businesses"][rand]["coordinates"]["latitude"].double!
+            longitude =  dataJSON["businesses"][rand]["coordinates"]["longitude"].double!
+            
+            print(name)
+            print(address1)
+            print(address2)
+        }
+        else {
+            print("error no result")
+        }
     }
     
     func getMapCoordinate() -> CLLocationCoordinate2D {

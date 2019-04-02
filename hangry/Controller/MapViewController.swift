@@ -26,6 +26,7 @@ class MapViewController: UIViewController {
     }
 
     @IBAction func hangryPressed(_ sender: Any) {
+        restaurantData!.randomRestaurantData()
         updateUI()
     }
     

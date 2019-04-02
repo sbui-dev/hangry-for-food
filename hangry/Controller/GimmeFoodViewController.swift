@@ -17,9 +17,9 @@ class GimmeFoodViewController: UIViewController, CLLocationManagerDelegate {
     var dataJSON : JSON = []
     var currentLatitude : String = ""
     var currentLongitude : String = ""
+    var restaurantData : RestaurantData?
     
     let locationManager = CLLocationManager()
-    let restaurantData = RestaurantData()
     let searchOptions = SearchOptionsData()
  
     override func viewDidLoad() {
@@ -54,55 +54,11 @@ class GimmeFoodViewController: UIViewController, CLLocationManagerDelegate {
                 response in
                 if response.result.isSuccess {
                     self.dataJSON = JSON(response.result.value!)
-                    self.parseJSON(json : self.dataJSON)
+                    self.restaurantData = RestaurantData(json : self.dataJSON)
                 } else {
                     print("Error: \(String(describing: response.result.error))")
                 }
             }
-        }
-    }
-    
-    //MARK: - JSON Parsing
-    /***************************************************************/
-    
-    func parseJSON(json : JSON) {
-        print(dataJSON)
-        if var totalResult = json["total"].int {
-            if totalResult == 0 {
-                return
-            }
-            // TODO: fix for 0 and 1 result
-            totalResult -= 1
-            
-            // randomly select an entry
-            var rand = Int.random(in: 0 ... totalResult)
-            
-            // catch case with nil data
-            while json["businesses"][rand]["name"].string == nil {
-                rand = Int.random(in: 0 ... totalResult)
-            }
-            
-            print("random number = \(rand)")
-            
-            // get data from entry
-            restaurantData.name = json["businesses"][rand]["name"].string!
-            restaurantData.street = json["businesses"][rand]["location"]["address1"].string!
-            restaurantData.city = json["businesses"][rand]["location"]["city"].string!
-            restaurantData.state = json["businesses"][rand]["location"]["state"].string!
-            restaurantData.postalCode = json["businesses"][rand]["location"]["zip_code"].string!
-            restaurantData.country = json["businesses"][rand]["location"]["country"].string!
-            restaurantData.address1 = json["businesses"][rand]["location"]["display_address"][0].string!
-            restaurantData.address2 = json["businesses"][rand]["location"]["display_address"][1].string!
-            restaurantData.latitude = json["businesses"][rand]["coordinates"]["latitude"].double!
-            restaurantData.longitude =  json["businesses"][rand]["coordinates"]["longitude"].double!
-            
-            print(restaurantData.name)
-            print(restaurantData.address1)
-            print(restaurantData.address2)
-            
-        }
-        else {
-            print("error no result")
         }
     }
     
