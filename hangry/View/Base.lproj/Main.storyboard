@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iYv-MD-kDb">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,25 +10,126 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--GimmeFood-->
+        <scene sceneID="Nuq-Kv-qE4">
+            <objects>
+                <viewController title="GimmeFood" id="iYv-MD-kDb" customClass="GimmeFoodViewController" customModule="hangry" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Azo-Ad-iSU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdk-aF-D4b">
+                                <rect key="frame" x="57" y="436" width="260" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="GimmeFoodButton"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="AGa-3C-1BL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obn-bk-VT3">
+                                <rect key="frame" x="137" y="610" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="OptionsButton"/>
+                                <connections>
+                                    <action selector="gimmeFoodPressed:" destination="iYv-MD-kDb" eventType="touchUpInside" id="6kr-pH-yMe"/>
+                                    <segue destination="glB-ds-x6I" kind="presentation" modalPresentationStyle="currentContext" id="udi-jY-v9x"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hle-OI-ZZH">
+                                <rect key="frame" x="300" y="46" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="settings"/>
+                                <connections>
+                                    <segue destination="M2d-XP-M74" kind="presentation" modalPresentationStyle="overCurrentContext" id="xTD-1P-lMf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.70196078429999997" green="0.074509803920000006" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="JxQ-PP-sg3"/>
+                    </view>
+                    <connections>
+                        <outlet property="gimmeFoodButton" destination="gdk-aF-D4b" id="5Ue-LW-9Ld"/>
+                        <outlet property="optionsButton" destination="obn-bk-VT3" id="0gm-Ue-6ks"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eAu-bg-otC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-671.20000000000005" y="135.38230884557723"/>
+        </scene>
+        <!--Options-->
+        <scene sceneID="jdx-Fy-gN1">
+            <objects>
+                <viewController title="Options" id="glB-ds-x6I" customClass="OptionsViewController" customModule="hangry" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F2A-wE-DZT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U8c-47-Ea8">
+                                <rect key="frame" x="67" y="269" width="240" height="322"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22l-ZX-FIW">
+                                        <rect key="frame" x="75" y="272" width="91" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Save Options"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.5" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="rfZ-cd-a51"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X18-vN-6yZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-671.20000000000005" y="891.90404797601207"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="cEf-7J-kkB">
+            <objects>
+                <viewController storyboardIdentifier="settingsPopup" title="Settings" modalPresentationStyle="overCurrentContext" id="M2d-XP-M74" customClass="SettingsViewController" customModule="hangry" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aCd-kD-cgT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lPu-u1-RTe">
+                                <rect key="frame" x="67" y="269" width="240" height="246"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSy-b3-bWO">
+                                        <rect key="frame" x="101" y="187" width="39" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Close"/>
+                                        <connections>
+                                            <segue destination="iYv-MD-kDb" kind="show" animates="NO" id="ZxA-9E-aFl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.5" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="jgz-Qv-uGz"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OjT-SG-chE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-671" y="-646"/>
+        </scene>
+        <!--Map-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="hangry" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Map" id="BYZ-38-t0r" customClass="ViewController" customModule="hangry" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dvn-zP-IF7">
-                                <rect key="frame" x="0.0" y="117.66666666666666" width="375" height="468.66666666666674"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="455"/>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hangry for Food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEa-DW-Vqk">
-                                <rect key="frame" x="41.666666666666657" y="50.666666666666657" width="292" height="47"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
-                                <color key="textColor" red="1" green="0.56470588235294117" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qhF-yd-lr0" userLabel="Restaurant Label View">
-                                <rect key="frame" x="0.0" y="596.33333333333337" width="375" height="81.666666666666629"/>
+                                <rect key="frame" x="0.0" y="485" width="375" height="82"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'm hangry!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zt-gy-48V">
                                         <rect key="frame" x="15" y="0.0" width="345" height="35"/>
@@ -37,13 +138,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feed me!" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnz-f4-kfT">
-                                        <rect key="frame" x="15" y="35" width="345" height="23.333333333333329"/>
+                                        <rect key="frame" x="15" y="35" width="345" height="23.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" red="0.99215686270000003" green="0.85490196080000003" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rawr!" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pwl-FS-Eap">
-                                        <rect key="frame" x="15" y="58.333333333333265" width="345" height="23.333333333333336"/>
+                                        <rect key="frame" x="15" y="58.5" width="345" height="23.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" red="0.99215686270000003" green="0.85490196080000003" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -65,10 +166,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fdc-KQ-EaY" userLabel="Button View">
-                                <rect key="frame" x="0.0" y="678" width="375" height="100"/>
+                                <rect key="frame" x="0.0" y="567" width="375" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VNE-dP-2Nf">
-                                        <rect key="frame" x="10" y="29" width="172.66666666666666" height="42"/>
+                                        <rect key="frame" x="10" y="29" width="172.5" height="42"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                         <state key="normal" title="HANGRY">
                                             <color key="titleColor" red="1" green="0.93333333333333335" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -78,7 +179,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCe-S3-PIe">
-                                        <rect key="frame" x="192.66666666666663" y="29" width="172.33333333333337" height="42"/>
+                                        <rect key="frame" x="192.5" y="29" width="172.5" height="42"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                         <state key="normal" title="Open Maps">
                                             <color key="titleColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -103,11 +204,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.70196078429999997" green="0.074509803920000006" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="mEa-DW-Vqk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="APA-4Y-GAB"/>
+                            <constraint firstItem="dvn-zP-IF7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6T3-IM-F4J"/>
                             <constraint firstItem="Fdc-KQ-EaY" firstAttribute="top" secondItem="qhF-yd-lr0" secondAttribute="bottom" id="Ev5-Uh-vvH"/>
                             <constraint firstItem="dvn-zP-IF7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FuJ-f1-Tdp"/>
                             <constraint firstItem="qhF-yd-lr0" firstAttribute="top" secondItem="dvn-zP-IF7" secondAttribute="bottom" constant="10" id="KfE-Pl-sDN"/>
-                            <constraint firstItem="dvn-zP-IF7" firstAttribute="top" secondItem="mEa-DW-Vqk" secondAttribute="bottom" constant="20" id="Nvf-Hz-Zvt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fdc-KQ-EaY" secondAttribute="trailing" id="SgS-rg-Cb6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dvn-zP-IF7" secondAttribute="trailing" id="TCf-xE-Mjf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qhF-yd-lr0" secondAttribute="trailing" id="aVB-g4-5LZ"/>
@@ -115,7 +215,6 @@
                             <constraint firstItem="Fdc-KQ-EaY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eRP-ic-ABC"/>
                             <constraint firstItem="dvn-zP-IF7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="g4I-9g-enD"/>
                             <constraint firstItem="qhF-yd-lr0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ndx-8j-6rG"/>
-                            <constraint firstItem="mEa-DW-Vqk" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="o78-oQ-2Bd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -128,7 +227,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.23188405797103" y="136.60714285714286"/>
+            <point key="canvasLocation" x="210" y="135"/>
         </scene>
     </scenes>
 </document>

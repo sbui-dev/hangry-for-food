@@ -82,7 +82,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             totalResult -= 1
             
             // randomly select an entry
-            let rand = Int.random(in: 0 ... totalResult)
+            var rand = Int.random(in: 0 ... totalResult)
+            
+            // catch case with nil data
+            while json["businesses"][rand]["name"].string == nil {
+                rand = Int.random(in: 0 ... totalResult)
+            }
+            
+            print("random number = \(rand)")
             
             // get data from entry
             restaurantData.name = json["businesses"][rand]["name"].string!

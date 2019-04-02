@@ -13,6 +13,9 @@
 		66842E51224F28CA008E6FAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66842E50224F28CA008E6FAA /* Assets.xcassets */; };
 		66842E54224F28CA008E6FAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66842E52224F28CA008E6FAA /* LaunchScreen.storyboard */; };
 		66842E5F22519D48008E6FAA /* RestaurantDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66842E5E22519D48008E6FAA /* RestaurantDataModel.swift */; };
+		66842E6822531866008E6FAA /* GimmeFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66842E6722531866008E6FAA /* GimmeFoodViewController.swift */; };
+		66842E6A225320F7008E6FAA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66842E69225320F6008E6FAA /* SettingsViewController.swift */; };
+		66842E6C22532B48008E6FAA /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66842E6B22532B48008E6FAA /* OptionsViewController.swift */; };
 		C96F09D8E7BA2906754EB4F7 /* Pods_hangry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92FE02EBD35701E6DF80A27 /* Pods_hangry.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +30,9 @@
 		66842E53224F28CA008E6FAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		66842E55224F28CA008E6FAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66842E5E22519D48008E6FAA /* RestaurantDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDataModel.swift; sourceTree = "<group>"; };
+		66842E6722531866008E6FAA /* GimmeFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GimmeFoodViewController.swift; sourceTree = "<group>"; };
+		66842E69225320F6008E6FAA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		66842E6B22532B48008E6FAA /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		D92FE02EBD35701E6DF80A27 /* Pods_hangry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hangry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -83,8 +89,11 @@
 		66842E632251A66C008E6FAA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				66842E4B224F28C9008E6FAA /* ViewController.swift */,
 				66842E49224F28C9008E6FAA /* AppDelegate.swift */,
+				66842E4B224F28C9008E6FAA /* ViewController.swift */,
+				66842E6722531866008E6FAA /* GimmeFoodViewController.swift */,
+				66842E69225320F6008E6FAA /* SettingsViewController.swift */,
+				66842E6B22532B48008E6FAA /* OptionsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -239,6 +248,9 @@
 			files = (
 				66842E4C224F28C9008E6FAA /* ViewController.swift in Sources */,
 				66842E4A224F28C9008E6FAA /* AppDelegate.swift in Sources */,
+				66842E6822531866008E6FAA /* GimmeFoodViewController.swift in Sources */,
+				66842E6C22532B48008E6FAA /* OptionsViewController.swift in Sources */,
+				66842E6A225320F7008E6FAA /* SettingsViewController.swift in Sources */,
 				66842E5F22519D48008E6FAA /* RestaurantDataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
