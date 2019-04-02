@@ -83,9 +83,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             // TODO: fix for 0 and 1 result
             totalResult -= 1
             
+            // randomly select an entry
             let rand = Int.random(in: 0 ... totalResult)
             
+            // get data from entry
             restaurantData.name = json["businesses"][rand]["name"].string!
+            restaurantData.street = json["businesses"][rand]["location"]["address1"].string!
+            restaurantData.city = json["businesses"][rand]["location"]["city"].string!
+            restaurantData.state = json["businesses"][rand]["location"]["state"].string!
+            restaurantData.postalCode = json["businesses"][rand]["location"]["zip_code"].string!
+            restaurantData.country = json["businesses"][rand]["location"]["country"].string!
             restaurantData.address1 = json["businesses"][rand]["location"]["display_address"][0].string!
             restaurantData.address2 = json["businesses"][rand]["location"]["display_address"][1].string!
             restaurantData.latitude = json["businesses"][rand]["coordinates"]["latitude"].double!
@@ -175,7 +182,7 @@ extension ViewController : MKMapViewDelegate {
     
     func openMaps(coordinate : CLLocationCoordinate2D) {
         let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
-        let placemark = MKPlacemark(coordinate: coordinate)
+        let placemark = MKPlacemark(coordinate: coordinate, postalAddress: restaurantData.getPostalAddress())
         let mapItem = MKMapItem(placemark: placemark)
         //mapItem.name = restaurantData.name
         mapItem.openInMaps(launchOptions: launchOptions)
