@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		661DECD62253373900C4A6F9 /* OptionsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661DECD52253373900C4A6F9 /* OptionsDataModel.swift */; };
 		66842E4A224F28C9008E6FAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66842E49224F28C9008E6FAA /* AppDelegate.swift */; };
 		66842E4C224F28C9008E6FAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66842E4B224F28C9008E6FAA /* ViewController.swift */; };
 		66842E4F224F28C9008E6FAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66842E4D224F28C9008E6FAA /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		16085F05616AA70C1D6387E0 /* Pods-hangry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hangry.release.xcconfig"; path = "Target Support Files/Pods-hangry/Pods-hangry.release.xcconfig"; sourceTree = "<group>"; };
 		4D9B59AF1589C75705722159 /* Pods-hangry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hangry.debug.xcconfig"; path = "Target Support Files/Pods-hangry/Pods-hangry.debug.xcconfig"; sourceTree = "<group>"; };
+		661DECD52253373900C4A6F9 /* OptionsDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsDataModel.swift; sourceTree = "<group>"; };
 		66842E46224F28C8008E6FAA /* hangry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hangry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66842E49224F28C9008E6FAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66842E4B224F28C9008E6FAA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				66842E5E22519D48008E6FAA /* RestaurantDataModel.swift */,
+				661DECD52253373900C4A6F9 /* OptionsDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				66842E6C22532B48008E6FAA /* OptionsViewController.swift in Sources */,
 				66842E6A225320F7008E6FAA /* SettingsViewController.swift in Sources */,
 				66842E5F22519D48008E6FAA /* RestaurantDataModel.swift in Sources */,
+				661DECD62253373900C4A6F9 /* OptionsDataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

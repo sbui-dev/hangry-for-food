@@ -25,6 +25,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     let restaurantData = RestaurantData()
+    let searchOptions = SearchOptionsData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +55,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func getRestaurantData() {
         let yelpURL = "https://api.yelp.com/v3/businesses/search"
         let header : [String : String] = ["Authorization" : "Bearer "]
-        let searchParams = ["term" : "restaurant", "latitude" : currentLatitude, "longitude" : currentLongitude, "radius" : "700", "open_now" : "false"]
+        let searchParams = ["term" : searchOptions.term, "latitude" : currentLatitude, "longitude" : currentLongitude, "radius" : searchOptions.radius, "open_now" : searchOptions.open_now]
         
         print("Running with params")
         print(searchParams)
