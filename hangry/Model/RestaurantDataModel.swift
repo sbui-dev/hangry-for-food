@@ -38,10 +38,13 @@ class RestaurantData {
     func randomRestaurantData() {
         print(dataJSON)
         if var totalResult = dataJSON["total"].int {
+            
             if totalResult == 0 {
+                name = "Error: Could not gather data"
                 return
             }
-            // TODO: fix for 0 and 1 result
+            
+            // offset by 1
             totalResult -= 1
             
             // randomly select an entry
@@ -71,7 +74,7 @@ class RestaurantData {
             print(address2)
         }
         else {
-            print("error no result")
+           name = "Error: No results found"
         }
     }
     

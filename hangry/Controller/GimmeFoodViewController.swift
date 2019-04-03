@@ -74,7 +74,7 @@ class GimmeFoodViewController: UIViewController, CLLocationManagerDelegate {
             currentLatitude = String(location.coordinate.latitude)
             currentLongitude = String(location.coordinate.longitude)
             
-            getRestaurantData()
+            getRestaurantData() // TODO fix multiple call issue
         }
     }
     

@@ -91,7 +91,6 @@ extension MapViewController : MKMapViewDelegate {
         let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
         let placemark = MKPlacemark(coordinate: coordinate, postalAddress: restaurantData!.getPostalAddress())
         let mapItem = MKMapItem(placemark: placemark)
-        //mapItem.name = restaurantData.name
         mapItem.openInMaps(launchOptions: launchOptions)
     }
 }
