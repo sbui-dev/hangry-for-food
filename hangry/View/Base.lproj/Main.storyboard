@@ -185,6 +185,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rfZ-cd-a51"/>
                     </view>
+                    <connections>
+                        <outlet property="openSwitch" destination="UQd-AA-Fpf" id="Wy2-44-C5s"/>
+                        <outlet property="radiusText" destination="D0e-cZ-0w9" id="ajB-hJ-B5X"/>
+                        <outlet property="searchText" destination="rBJ-gj-bbq" id="olk-20-h78"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X18-vN-6yZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

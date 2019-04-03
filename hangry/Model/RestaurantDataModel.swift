@@ -40,7 +40,8 @@ class RestaurantData {
         if var totalResult = dataJSON["total"].int {
             
             if totalResult == 0 {
-                name = "Error: Could not gather data"
+                name = "No results found"
+                address1 = "Try changing options"
                 return
             }
             

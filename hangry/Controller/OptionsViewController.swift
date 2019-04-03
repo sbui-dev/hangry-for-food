@@ -9,6 +9,11 @@
 import UIKit
 
 class OptionsViewController: UIViewController {
+    
+    @IBOutlet weak var searchText: UITextField!
+    @IBOutlet weak var radiusText: UITextField!
+    @IBOutlet weak var openSwitch: UISwitch!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,15 +21,23 @@ class OptionsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        print("preparing segue")
+        if segue.destination is GimmeFoodViewController {
+            
+            print("setting options")
+            let vc = segue.destination as? GimmeFoodViewController
+            
+            if searchText.hasText {
+                vc?.searchOptions.term = searchText.text!
+            }
+            
+            if radiusText.hasText {
+                vc?.searchOptions.radius = radiusText.text!
+            }
+            
+            vc?.searchOptions.setOpen(open : openSwitch.isOn)
+        }
     }
-    */
 
 }

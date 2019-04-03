@@ -20,7 +20,7 @@ class GimmeFoodViewController: UIViewController, CLLocationManagerDelegate {
     var restaurantData : RestaurantData?
     
     let locationManager = CLLocationManager()
-    let searchOptions = SearchOptionsData()
+    var searchOptions = SearchOptionsData()
  
     override func viewDidLoad() {
         super.viewDidLoad()

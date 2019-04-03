@@ -12,4 +12,13 @@ class SearchOptionsData {
     var term : String = "restaurant"
     var radius : String = "750"
     var open_now : String = "false" // TODO: change to true
+    
+    func setOpen(open : Bool) {
+        if open {
+            open_now = "true"
+        }
+        else {
+            open_now = "false"
+        }
+    }
 }
