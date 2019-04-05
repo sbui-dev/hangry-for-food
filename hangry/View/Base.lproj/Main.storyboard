@@ -243,8 +243,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Implemented by" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="v5l-O9-gfO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hannah Yeh" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Otm-xC-heI">
+                                <rect key="frame" x="75" y="268.5" width="225" height="32"/>
+                                <fontDescription key="fontDescription" name="Baloo" family="Baloo" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="v5l-O9-gfO">
                                 <rect key="frame" x="75" y="137.5" width="225" height="39.5"/>
+                                <fontDescription key="fontDescription" name="Baloo" family="Baloo" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Art by" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eyf-ZQ-RwZ">
+                                <rect key="frame" x="75" y="229" width="225" height="39.5"/>
                                 <fontDescription key="fontDescription" name="Baloo" family="Baloo" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -274,13 +286,19 @@
                             <constraint firstItem="jgz-Qv-uGz" firstAttribute="bottom" secondItem="sSy-b3-bWO" secondAttribute="bottom" constant="30" id="6FQ-Dc-cey"/>
                             <constraint firstItem="sSy-b3-bWO" firstAttribute="leading" secondItem="jgz-Qv-uGz" secondAttribute="leading" constant="80" id="9It-1M-3yV"/>
                             <constraint firstItem="LYJ-7i-Ysv" firstAttribute="top" secondItem="jgz-Qv-uGz" secondAttribute="top" constant="60" id="Bpu-Kp-KlD"/>
+                            <constraint firstItem="Otm-xC-heI" firstAttribute="leading" secondItem="jgz-Qv-uGz" secondAttribute="leading" constant="75" id="GhZ-YD-UNr"/>
                             <constraint firstItem="jgz-Qv-uGz" firstAttribute="trailing" secondItem="sSy-b3-bWO" secondAttribute="trailing" constant="80" id="OQ5-ZQ-3Wj"/>
+                            <constraint firstItem="jgz-Qv-uGz" firstAttribute="trailing" secondItem="Otm-xC-heI" secondAttribute="trailing" constant="75" id="Q11-FV-Ac5"/>
                             <constraint firstItem="v5l-O9-gfO" firstAttribute="leading" secondItem="jgz-Qv-uGz" secondAttribute="leading" constant="75" id="Q9x-TO-akP"/>
                             <constraint firstItem="v5l-O9-gfO" firstAttribute="top" secondItem="LYJ-7i-Ysv" secondAttribute="bottom" constant="10" id="RGX-pU-vye"/>
                             <constraint firstItem="jgz-Qv-uGz" firstAttribute="bottom" secondItem="xth-rx-pzd" secondAttribute="bottom" constant="70" id="Vrd-1c-eyH"/>
                             <constraint firstItem="7UW-pO-4cK" firstAttribute="top" secondItem="v5l-O9-gfO" secondAttribute="bottom" id="ZJn-Ae-Tf7"/>
+                            <constraint firstItem="jgz-Qv-uGz" firstAttribute="trailing" secondItem="eyf-ZQ-RwZ" secondAttribute="trailing" constant="75" id="a5n-eH-t91"/>
                             <constraint firstItem="jgz-Qv-uGz" firstAttribute="trailing" secondItem="xth-rx-pzd" secondAttribute="trailing" constant="30" id="bgd-mB-6BN"/>
+                            <constraint firstItem="eyf-ZQ-RwZ" firstAttribute="leading" secondItem="jgz-Qv-uGz" secondAttribute="leading" constant="75" id="gaV-SI-R9o"/>
+                            <constraint firstItem="Otm-xC-heI" firstAttribute="top" secondItem="eyf-ZQ-RwZ" secondAttribute="bottom" id="i2T-Xu-0N1"/>
                             <constraint firstItem="7UW-pO-4cK" firstAttribute="centerX" secondItem="aCd-kD-cgT" secondAttribute="centerX" id="jo1-bC-FSz"/>
+                            <constraint firstItem="eyf-ZQ-RwZ" firstAttribute="top" secondItem="7UW-pO-4cK" secondAttribute="bottom" constant="20" id="nAI-gf-hiH"/>
                             <constraint firstItem="xth-rx-pzd" firstAttribute="top" secondItem="jgz-Qv-uGz" secondAttribute="top" constant="50" id="tHl-8U-sSc"/>
                             <constraint firstItem="LYJ-7i-Ysv" firstAttribute="leading" secondItem="jgz-Qv-uGz" secondAttribute="leading" constant="60" id="u52-qI-JPc"/>
                             <constraint firstItem="sSy-b3-bWO" firstAttribute="centerY" secondItem="xth-rx-pzd" secondAttribute="bottom" id="uqX-a8-gTP"/>
@@ -315,7 +333,7 @@
                                 <rect key="frame" x="0.0" y="366" width="375" height="151"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'm hangry!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zt-gy-48V">
-                                        <rect key="frame" x="15" y="0.0" width="360" height="36"/>
+                                        <rect key="frame" x="15" y="0.0" width="345" height="36"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -365,7 +383,7 @@ Maps</string>
                                 <constraints>
                                     <constraint firstItem="USc-R1-kYw" firstAttribute="top" secondItem="9Zf-07-XN8" secondAttribute="bottom" id="12b-Xg-zqp"/>
                                     <constraint firstItem="Pwl-FS-Eap" firstAttribute="leading" secondItem="qhF-yd-lr0" secondAttribute="leading" constant="15" id="1es-x3-G2w"/>
-                                    <constraint firstAttribute="trailing" secondItem="1zt-gy-48V" secondAttribute="trailing" id="1f2-rP-0HL"/>
+                                    <constraint firstAttribute="trailing" secondItem="1zt-gy-48V" secondAttribute="trailing" constant="15" id="1f2-rP-0HL"/>
                                     <constraint firstAttribute="trailing" secondItem="WCe-S3-PIe" secondAttribute="trailing" constant="15" id="4Tx-Y2-Pv2"/>
                                     <constraint firstAttribute="bottom" secondItem="WCe-S3-PIe" secondAttribute="bottom" constant="5" id="A0C-7F-1GJ"/>
                                     <constraint firstAttribute="trailing" secondItem="9Zf-07-XN8" secondAttribute="trailing" constant="15" id="AfW-Sb-txb"/>
@@ -449,6 +467,6 @@ Maps</string>
         <image name="ui_title" width="580" height="800"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="brW-wA-1CH"/>
+        <segue reference="ZxA-9E-aFl"/>
     </inferredMetricsTieBreakers>
 </document>

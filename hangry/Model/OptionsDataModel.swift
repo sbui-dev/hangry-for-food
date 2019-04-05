@@ -11,7 +11,7 @@ import Foundation
 class SearchOptionsData {
     var term : String = "restaurant"
     var radius : String = "750"
-    var open_now : String = "false" // TODO: change to true
+    var open_now : String = "true"
     
     func setOpen(open : Bool) {
         if open {
