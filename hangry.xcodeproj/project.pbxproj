@@ -73,11 +73,11 @@
 		66842E48224F28C9008E6FAA /* hangry */ = {
 			isa = PBXGroup;
 			children = (
-				66ABB4B12257129F00983531 /* Baloo-Regular.ttf */,
 				66842E622251A644008E6FAA /* Model */,
 				66842E642251A695008E6FAA /* View */,
 				66842E632251A66C008E6FAA /* Controller */,
 				66842E50224F28CA008E6FAA /* Assets.xcassets */,
+				66ABB4B12257129F00983531 /* Baloo-Regular.ttf */,
 				66842E55224F28CA008E6FAA /* Info.plist */,
 			);
 			path = hangry;

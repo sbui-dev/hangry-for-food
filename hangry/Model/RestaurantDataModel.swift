@@ -47,18 +47,22 @@ class RestaurantData {
                 return
             }
             
-            // offset by 1
-            totalResult -= 1
+            var rand = 0
             
-            // randomly select an entry
-            var rand = Int.random(in: 0 ... totalResult)
-            
-            // catch case with nil data
-            while dataJSON["businesses"][rand]["name"].string == nil {
+            if totalResult != 1 {
+                // offset by 1
+                totalResult -= 1
+                
+                // randomly select an entry
                 rand = Int.random(in: 0 ... totalResult)
+                
+                // catch case with nil data
+                while dataJSON["businesses"][rand]["name"].string == nil {
+                    rand = Int.random(in: 0 ... totalResult)
+                }
+                
+                //print("random number = \(rand)")
             }
-            
-            print("random number = \(rand)")
             
             // get data from entry
             name = dataJSON["businesses"][rand]["name"].string!
@@ -79,9 +83,9 @@ class RestaurantData {
             latitude = dataJSON["businesses"][rand]["coordinates"]["latitude"].double!
             longitude =  dataJSON["businesses"][rand]["coordinates"]["longitude"].double!
             
-            print(name)
-            print(address1)
-            print(address2)
+            //print(name)
+            //print(address1)
+            //print(address2)
         }
         else {
            name = "Error: No results found"

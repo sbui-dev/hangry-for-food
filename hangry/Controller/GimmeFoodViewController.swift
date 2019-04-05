@@ -66,7 +66,7 @@ class GimmeFoodViewController: UIViewController, CLLocationManagerDelegate {
         print("Running with params")
         print(searchParams)
         if dataJSON.isEmpty {
-            print("using yelp api")
+            //print("using yelp api")
             Alamofire.request(yelpURL, method : .get, parameters : searchParams, headers : header).responseJSON {
                 response in
                 if response.result.isSuccess {
@@ -75,7 +75,8 @@ class GimmeFoodViewController: UIViewController, CLLocationManagerDelegate {
                     print(self.dataJSON)
                     self.hangryButton.isEnabled = true
                 } else {
-                    print("Error: \(String(describing: response.result.error))")
+                    //print("Error: \(String(describing: response.result.error))")
+                    self.restaurantData?.name = "Error: Unable to connect to server"
                 }
             }
         }
@@ -94,11 +95,11 @@ class GimmeFoodViewController: UIViewController, CLLocationManagerDelegate {
             currentLongitude = String(location.coordinate.longitude)
             
             getRestaurantData() // TODO bug - makes multiple calls when transitioning from other pages
-            print("found location")
+            //print("found location")
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        //restaurant_name.text = "Error: Could not detect location"
+        self.restaurantData?.name = "Error: Could not detect location"
     }
 }

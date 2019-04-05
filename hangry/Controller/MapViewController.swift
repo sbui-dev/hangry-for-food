@@ -91,7 +91,7 @@ extension MapViewController : MKMapViewDelegate {
             openMaps(coordinate : location)
         }
         else {
-            restaurant_name.text = "Error opening maps"
+            restaurant_name.text = "Error: Could not open in maps"
         }
     }
     
