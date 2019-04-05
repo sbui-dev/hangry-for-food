@@ -55,7 +55,7 @@
                                 <rect key="frame" x="60" y="418.5" width="255" height="174.5"/>
                                 <state key="normal" image="btn_needfood"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="jHA-nr-Ctc"/>
+                                    <action selector="hangryPressed:" destination="iYv-MD-kDb" eventType="touchUpInside" id="QOo-TY-qno"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -77,7 +77,9 @@
                         <viewLayoutGuide key="safeArea" id="JxQ-PP-sg3"/>
                     </view>
                     <connections>
+                        <outlet property="hangryButton" destination="gdk-aF-D4b" id="xBj-FV-1ak"/>
                         <outlet property="optionsButton" destination="obn-bk-VT3" id="r23-qx-g6h"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToMapView" id="34K-rI-Wgu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eAu-bg-otC" userLabel="First Responder" sceneMemberID="firstResponder"/>

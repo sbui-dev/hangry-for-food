@@ -28,6 +28,10 @@ class MapViewController: UIViewController {
         // center text in button
         mapButton.titleLabel?.textAlignment = .center
         mapButton.titleLabel?.numberOfLines = 0
+        
+        // pre populate screen
+        restaurantData?.randomRestaurantData()
+        updateUI()
     }
 
     @IBAction func hangryPressed(_ sender: Any) {
@@ -79,7 +83,7 @@ extension MapViewController : MKMapViewDelegate {
             openMaps(coordinate : location)
         }
         else {
-            print("Error opening in map")
+            restaurant_name.text = "Error opening maps"
         }
     }
     

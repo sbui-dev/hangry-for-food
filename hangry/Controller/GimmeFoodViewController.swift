@@ -23,6 +23,7 @@ class GimmeFoodViewController: UIViewController, CLLocationManagerDelegate {
     var searchOptions = SearchOptionsData()
  
     @IBOutlet weak var optionsButton: UIButton!
+    @IBOutlet weak var hangryButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,9 +39,16 @@ class GimmeFoodViewController: UIViewController, CLLocationManagerDelegate {
         optionsButton.layer.borderWidth = 1
         optionsButton.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.09019607843, blue: 0.1137254902, alpha: 1)
         
+        // disable button until GPS location
+        hangryButton.isEnabled = false
     }
-  
+    
+    @IBAction func hangryPressed(_ sender: Any) {
+        performSegue(withIdentifier: "goToMapView", sender: nil)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("Preparing for transition")
         if segue.destination is MapViewController {
             let vc = segue.destination as? MapViewController
             vc?.restaurantData = restaurantData
@@ -64,6 +72,8 @@ class GimmeFoodViewController: UIViewController, CLLocationManagerDelegate {
                 if response.result.isSuccess {
                     self.dataJSON = JSON(response.result.value!)
                     self.restaurantData = RestaurantData(json : self.dataJSON)
+                    print(self.dataJSON)
+                    self.hangryButton.isEnabled = true
                 } else {
                     print("Error: \(String(describing: response.result.error))")
                 }
@@ -84,6 +94,7 @@ class GimmeFoodViewController: UIViewController, CLLocationManagerDelegate {
             currentLongitude = String(location.coordinate.longitude)
             
             getRestaurantData() // TODO bug - makes multiple calls when transitioning from other pages
+            print("found location")
         }
     }
     
