@@ -17,6 +17,7 @@
 		66842E6822531866008E6FAA /* GimmeFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66842E6722531866008E6FAA /* GimmeFoodViewController.swift */; };
 		66842E6A225320F7008E6FAA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66842E69225320F6008E6FAA /* SettingsViewController.swift */; };
 		66842E6C22532B48008E6FAA /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66842E6B22532B48008E6FAA /* OptionsViewController.swift */; };
+		66ABB4B22257129F00983531 /* Baloo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66ABB4B12257129F00983531 /* Baloo-Regular.ttf */; };
 		C96F09D8E7BA2906754EB4F7 /* Pods_hangry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92FE02EBD35701E6DF80A27 /* Pods_hangry.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		66842E6722531866008E6FAA /* GimmeFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GimmeFoodViewController.swift; sourceTree = "<group>"; };
 		66842E69225320F6008E6FAA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		66842E6B22532B48008E6FAA /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
+		66ABB4B12257129F00983531 /* Baloo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Baloo-Regular.ttf"; sourceTree = "<group>"; };
 		D92FE02EBD35701E6DF80A27 /* Pods_hangry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hangry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -71,6 +73,7 @@
 		66842E48224F28C9008E6FAA /* hangry */ = {
 			isa = PBXGroup;
 			children = (
+				66ABB4B12257129F00983531 /* Baloo-Regular.ttf */,
 				66842E622251A644008E6FAA /* Model */,
 				66842E642251A695008E6FAA /* View */,
 				66842E632251A66C008E6FAA /* Controller */,
@@ -188,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66842E54224F28CA008E6FAA /* LaunchScreen.storyboard in Resources */,
+				66ABB4B22257129F00983531 /* Baloo-Regular.ttf in Resources */,
 				66842E51224F28CA008E6FAA /* Assets.xcassets in Resources */,
 				66842E4F224F28C9008E6FAA /* Main.storyboard in Resources */,
 			);
