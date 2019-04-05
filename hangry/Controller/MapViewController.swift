@@ -18,11 +18,15 @@ class MapViewController: UIViewController {
     @IBOutlet weak var restaurant_address1: UILabel!
     @IBOutlet weak var restaurant_address2: UILabel!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var mapButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         mapView.delegate = self
+        
+        mapButton.titleLabel?.textAlignment = .center
+        mapButton.titleLabel?.numberOfLines = 0
     }
 
     @IBAction func hangryPressed(_ sender: Any) {
