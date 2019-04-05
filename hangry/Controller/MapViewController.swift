@@ -25,12 +25,13 @@ class MapViewController: UIViewController {
 
         mapView.delegate = self
         
+        // center text in button
         mapButton.titleLabel?.textAlignment = .center
         mapButton.titleLabel?.numberOfLines = 0
     }
 
     @IBAction func hangryPressed(_ sender: Any) {
-        restaurantData!.randomRestaurantData()
+        restaurantData?.randomRestaurantData()
         updateUI()
     }
     
