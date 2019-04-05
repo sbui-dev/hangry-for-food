@@ -18,6 +18,8 @@ class RestaurantData {
     var name : String = ""
     var address1 : String = ""
     var address2 : String = ""
+    var address3 : String = ""
+    var phone : String = ""
     
     var street: String = ""
     var city: String = ""
@@ -67,6 +69,13 @@ class RestaurantData {
             country = dataJSON["businesses"][rand]["location"]["country"].string!
             address1 = dataJSON["businesses"][rand]["location"]["display_address"][0].string!
             address2 = dataJSON["businesses"][rand]["location"]["display_address"][1].string!
+            if dataJSON["businesses"][rand]["location"]["display_address"].count > 2 {
+                address3 = dataJSON["businesses"][rand]["location"]["display_address"][2].string!
+            }
+            else {
+                address3 = ""
+            }
+            phone = dataJSON["businesses"][rand]["display_phone"].string!
             latitude = dataJSON["businesses"][rand]["coordinates"]["latitude"].double!
             longitude =  dataJSON["businesses"][rand]["coordinates"]["longitude"].double!
             

@@ -51,8 +51,8 @@
                                     <segue destination="M2d-XP-M74" kind="presentation" modalPresentationStyle="overCurrentContext" id="xTD-1P-lMf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdk-aF-D4b" userLabel="I Need Food Button">
-                                <rect key="frame" x="60" y="418.5" width="255" height="174.5"/>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdk-aF-D4b" userLabel="I Need Food Button">
+                                <rect key="frame" x="60" y="423.5" width="255" height="169.5"/>
                                 <state key="normal" image="btn_needfood"/>
                                 <connections>
                                     <action selector="hangryPressed:" destination="iYv-MD-kDb" eventType="touchUpInside" id="QOo-TY-qno"/>
@@ -69,7 +69,7 @@
                             <constraint firstItem="gOZ-8r-hgM" firstAttribute="bottom" secondItem="obn-bk-VT3" secondAttribute="top" id="hca-IN-HhM"/>
                             <constraint firstItem="gOZ-8r-hgM" firstAttribute="trailing" secondItem="JxQ-PP-sg3" secondAttribute="trailing" id="sDb-6q-hPM"/>
                             <constraint firstItem="gOZ-8r-hgM" firstAttribute="bottom" secondItem="gdk-aF-D4b" secondAttribute="bottom" id="tE6-dV-9dZ"/>
-                            <constraint firstItem="gdk-aF-D4b" firstAttribute="top" secondItem="JxQ-PP-sg3" secondAttribute="centerY" constant="75" id="vNQ-xN-kKv"/>
+                            <constraint firstItem="gdk-aF-D4b" firstAttribute="top" secondItem="JxQ-PP-sg3" secondAttribute="centerY" constant="80" id="vNQ-xN-kKv"/>
                             <constraint firstItem="JxQ-PP-sg3" firstAttribute="bottom" secondItem="obn-bk-VT3" secondAttribute="bottom" constant="20" id="vRA-vY-XSh"/>
                             <constraint firstItem="hle-OI-ZZH" firstAttribute="trailing" secondItem="Azo-Ad-iSU" secondAttribute="trailing" constant="-10" id="wXf-Yl-66Q"/>
                             <constraint firstItem="gOZ-8r-hgM" firstAttribute="top" secondItem="JxQ-PP-sg3" secondAttribute="top" constant="-20" id="zg9-ho-jMB"/>
@@ -301,7 +301,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dvn-zP-IF7">
-                                <rect key="frame" x="0.0" y="75" width="375" height="292"/>
+                                <rect key="frame" x="0.0" y="75" width="375" height="281"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czJ-by-goH" userLabel="About Button">
                                 <rect key="frame" x="325" y="30" width="40" height="40"/>
@@ -312,28 +312,40 @@
                                 <state key="normal" image="ui_gear"/>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qhF-yd-lr0" userLabel="Restaurant Label View">
-                                <rect key="frame" x="0.0" y="377" width="375" height="140"/>
+                                <rect key="frame" x="0.0" y="366" width="375" height="151"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'm hangry!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zt-gy-48V">
-                                        <rect key="frame" x="15" y="0.0" width="360" height="35"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                        <rect key="frame" x="15" y="0.0" width="360" height="36"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feed me!" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnz-f4-kfT">
-                                        <rect key="frame" x="15" y="35" width="230" height="23.5"/>
+                                        <rect key="frame" x="15" y="46" width="230" height="23.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rawr!" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pwl-FS-Eap">
-                                        <rect key="frame" x="15" y="58.5" width="230" height="81.5"/>
+                                        <rect key="frame" x="15" y="69.5" width="230" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rawr!" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Zf-07-XN8" userLabel="Restaurant address3">
+                                        <rect key="frame" x="15" y="93" width="345" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rawr!" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USc-R1-kYw" userLabel="Restaurant phone">
+                                        <rect key="frame" x="15" y="116.5" width="345" height="23.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="WCe-S3-PIe">
-                                        <rect key="frame" x="260" y="35" width="100" height="100"/>
+                                        <rect key="frame" x="260" y="46" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="0Iu-bD-ePG"/>
                                             <constraint firstAttribute="width" secondItem="WCe-S3-PIe" secondAttribute="height" multiplier="1:1" id="jW8-Ki-lm4"/>
@@ -351,19 +363,23 @@ Maps</string>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="USc-R1-kYw" firstAttribute="top" secondItem="9Zf-07-XN8" secondAttribute="bottom" id="12b-Xg-zqp"/>
                                     <constraint firstItem="Pwl-FS-Eap" firstAttribute="leading" secondItem="qhF-yd-lr0" secondAttribute="leading" constant="15" id="1es-x3-G2w"/>
                                     <constraint firstAttribute="trailing" secondItem="1zt-gy-48V" secondAttribute="trailing" id="1f2-rP-0HL"/>
                                     <constraint firstAttribute="trailing" secondItem="WCe-S3-PIe" secondAttribute="trailing" constant="15" id="4Tx-Y2-Pv2"/>
                                     <constraint firstAttribute="bottom" secondItem="WCe-S3-PIe" secondAttribute="bottom" constant="5" id="A0C-7F-1GJ"/>
-                                    <constraint firstItem="1zt-gy-48V" firstAttribute="bottom" secondItem="gnz-f4-kfT" secondAttribute="bottom" constant="-23.5" id="CvK-gg-2lg"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Zf-07-XN8" secondAttribute="trailing" constant="15" id="AfW-Sb-txb"/>
+                                    <constraint firstItem="USc-R1-kYw" firstAttribute="leading" secondItem="qhF-yd-lr0" secondAttribute="leading" constant="15" id="E92-uO-4BF"/>
                                     <constraint firstItem="Pwl-FS-Eap" firstAttribute="top" secondItem="gnz-f4-kfT" secondAttribute="bottom" id="EDR-Xb-dsn"/>
-                                    <constraint firstItem="Pwl-FS-Eap" firstAttribute="bottom" secondItem="qhF-yd-lr0" secondAttribute="bottom" id="EUc-Hj-hQs"/>
+                                    <constraint firstAttribute="trailing" secondItem="USc-R1-kYw" secondAttribute="trailing" constant="15" id="I2q-MG-cAq"/>
                                     <constraint firstItem="gnz-f4-kfT" firstAttribute="leading" secondItem="qhF-yd-lr0" secondAttribute="leading" constant="15" id="PHx-K3-1Zv"/>
-                                    <constraint firstItem="WCe-S3-PIe" firstAttribute="top" secondItem="1zt-gy-48V" secondAttribute="bottom" id="TxS-X4-jVO"/>
+                                    <constraint firstItem="9Zf-07-XN8" firstAttribute="leading" secondItem="qhF-yd-lr0" secondAttribute="leading" constant="15" id="PdJ-tw-D49"/>
+                                    <constraint firstItem="WCe-S3-PIe" firstAttribute="top" secondItem="gnz-f4-kfT" secondAttribute="top" id="TxS-X4-jVO"/>
                                     <constraint firstItem="1zt-gy-48V" firstAttribute="top" secondItem="qhF-yd-lr0" secondAttribute="top" id="bwV-IK-Ip5"/>
                                     <constraint firstItem="1zt-gy-48V" firstAttribute="leading" secondItem="qhF-yd-lr0" secondAttribute="leading" constant="15" id="jdu-rp-c8z"/>
-                                    <constraint firstItem="gnz-f4-kfT" firstAttribute="top" secondItem="1zt-gy-48V" secondAttribute="bottom" id="mLu-ov-J1U"/>
+                                    <constraint firstItem="gnz-f4-kfT" firstAttribute="top" secondItem="1zt-gy-48V" secondAttribute="bottom" constant="10" id="mLu-ov-J1U"/>
                                     <constraint firstItem="WCe-S3-PIe" firstAttribute="leading" secondItem="Pwl-FS-Eap" secondAttribute="trailing" constant="15" id="vVr-E0-7Xs"/>
+                                    <constraint firstItem="9Zf-07-XN8" firstAttribute="top" secondItem="Pwl-FS-Eap" secondAttribute="bottom" id="z4q-qd-hcI"/>
                                     <constraint firstItem="WCe-S3-PIe" firstAttribute="leading" secondItem="gnz-f4-kfT" secondAttribute="trailing" constant="15" id="zuX-31-CGV"/>
                                 </constraints>
                             </view>
@@ -413,7 +429,9 @@ Maps</string>
                         <outlet property="mapView" destination="dvn-zP-IF7" id="ghc-3P-qRE"/>
                         <outlet property="restaurant_address1" destination="gnz-f4-kfT" id="6qq-Ws-WeI"/>
                         <outlet property="restaurant_address2" destination="Pwl-FS-Eap" id="mab-fT-aZk"/>
+                        <outlet property="restaurant_address3" destination="9Zf-07-XN8" id="fYb-yM-900"/>
                         <outlet property="restaurant_name" destination="1zt-gy-48V" id="vhw-tq-BWg"/>
+                        <outlet property="restaurant_phone" destination="USc-R1-kYw" id="6IQ-bh-FFR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

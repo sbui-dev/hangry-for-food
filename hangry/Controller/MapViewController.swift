@@ -17,6 +17,8 @@ class MapViewController: UIViewController {
     @IBOutlet weak var restaurant_name: UILabel!
     @IBOutlet weak var restaurant_address1: UILabel!
     @IBOutlet weak var restaurant_address2: UILabel!
+    @IBOutlet weak var restaurant_address3: UILabel!
+    @IBOutlet weak var restaurant_phone: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var mapButton: UIButton!
     
@@ -57,6 +59,12 @@ class MapViewController: UIViewController {
         
         restaurant_address2.text = restaurantData!.address2
         restaurant_address2.adjustsFontSizeToFitWidth = true
+        
+        restaurant_address3.text = restaurantData!.address3
+        restaurant_address3.adjustsFontSizeToFitWidth = true
+        
+        restaurant_phone.text = restaurantData!.phone
+        restaurant_phone.adjustsFontSizeToFitWidth = true
         
         // update map
         let coordinateRegion = MKCoordinateRegion(center: (restaurantData!.getMapCoordinate()),
