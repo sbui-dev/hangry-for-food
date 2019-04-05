@@ -22,6 +22,8 @@ class GimmeFoodViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var searchOptions = SearchOptionsData()
  
+    @IBOutlet weak var optionsButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +31,13 @@ class GimmeFoodViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
+        // create a rounded border for options button
+        optionsButton.layer.cornerRadius = optionsButton.frame.height/2.0
+        optionsButton.layer.masksToBounds = true
+        optionsButton.layer.borderWidth = 1
+        optionsButton.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.09019607843, blue: 0.1137254902, alpha: 1)
+        
     }
   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -74,7 +83,7 @@ class GimmeFoodViewController: UIViewController, CLLocationManagerDelegate {
             currentLatitude = String(location.coordinate.latitude)
             currentLongitude = String(location.coordinate.longitude)
             
-            getRestaurantData() // TODO fix multiple call issue
+            getRestaurantData() // TODO bug - makes multiple calls when transitioning from other pages
         }
     }
     

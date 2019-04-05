@@ -22,10 +22,8 @@ class OptionsViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("preparing segue")
         if segue.destination is GimmeFoodViewController {
-            
-            print("setting options")
+
             let vc = segue.destination as? GimmeFoodViewController
             
             if searchText.hasText {

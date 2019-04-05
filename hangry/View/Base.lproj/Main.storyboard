@@ -19,17 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdk-aF-D4b">
-                                <rect key="frame" x="123" y="482" width="129" height="30"/>
+                                <rect key="frame" x="123" y="464" width="129" height="30"/>
                                 <state key="normal" title="GimmeFoodButton"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="jHA-nr-Ctc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obn-bk-VT3">
-                                <rect key="frame" x="137.5" y="612" width="100" height="30"/>
-                                <state key="normal" title="OptionsButton"/>
-                                <connections>
-                                    <segue destination="glB-ds-x6I" kind="presentation" modalPresentationStyle="currentContext" id="VV9-It-iIl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hle-OI-ZZH">
@@ -39,10 +32,21 @@
                                     <segue destination="M2d-XP-M74" kind="presentation" modalPresentationStyle="overCurrentContext" id="xTD-1P-lMf"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obn-bk-VT3">
+                                <rect key="frame" x="134" y="594" width="107" height="48"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="25"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" title="Options">
+                                    <color key="titleColor" red="0.75294117650000003" green="0.090196078430000007" blue="0.1137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="glB-ds-x6I" kind="presentation" modalPresentationStyle="currentContext" id="VV9-It-iIl"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.70196078429999997" green="0.074509803920000006" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.16862745098039217" green="0.050980392156862744" blue="0.050980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="obn-bk-VT3" firstAttribute="centerX" secondItem="Azo-Ad-iSU" secondAttribute="centerX" id="Lef-vX-2Z5"/>
+                            <constraint firstItem="obn-bk-VT3" firstAttribute="centerX" secondItem="Azo-Ad-iSU" secondAttribute="centerX" id="JrD-yw-bNl"/>
                             <constraint firstItem="gdk-aF-D4b" firstAttribute="centerX" secondItem="Azo-Ad-iSU" secondAttribute="centerX" id="ObY-v4-N3i"/>
                             <constraint firstItem="obn-bk-VT3" firstAttribute="top" secondItem="gdk-aF-D4b" secondAttribute="bottom" constant="100" id="Rx3-5D-w3b"/>
                             <constraint firstItem="hle-OI-ZZH" firstAttribute="leading" secondItem="JxQ-PP-sg3" secondAttribute="leading" constant="300" id="Uos-X9-ruH"/>
@@ -52,6 +56,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JxQ-PP-sg3"/>
                     </view>
+                    <connections>
+                        <outlet property="optionsButton" destination="obn-bk-VT3" id="r23-qx-g6h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eAu-bg-otC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -278,19 +285,19 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'm hangry!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zt-gy-48V">
                                         <rect key="frame" x="15" y="0.0" width="345" height="35"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
-                                        <color key="textColor" red="0.99215686274509807" green="0.85490196078431369" blue="0.086274509803921567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.75294117647058822" green="0.090196078431372548" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feed me!" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnz-f4-kfT">
                                         <rect key="frame" x="15" y="35" width="345" height="23.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                        <color key="textColor" red="0.99215686270000003" green="0.85490196080000003" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.75294117650000003" green="0.090196078430000007" blue="0.1137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rawr!" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pwl-FS-Eap">
                                         <rect key="frame" x="15" y="58.5" width="345" height="23.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                        <color key="textColor" red="0.99215686270000003" green="0.85490196080000003" blue="0.086274509799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.75294117650000003" green="0.090196078430000007" blue="0.1137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -346,7 +353,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.70196078429999997" green="0.074509803920000006" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.16862745100000001" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dvn-zP-IF7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6T3-IM-F4J"/>
                             <constraint firstItem="Fdc-KQ-EaY" firstAttribute="top" secondItem="qhF-yd-lr0" secondAttribute="bottom" id="Ev5-Uh-vvH"/>
