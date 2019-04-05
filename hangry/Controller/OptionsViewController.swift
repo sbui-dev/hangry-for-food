@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OptionsViewController: UIViewController {
+class OptionsViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var searchText: UITextField!
     @IBOutlet weak var radiusText: UITextField!
@@ -37,5 +37,14 @@ class OptionsViewController: UIViewController {
             vc?.searchOptions.setOpen(open : openSwitch.isOn)
         }
     }
-
+    
+    // MARK: Text field methods
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 }
