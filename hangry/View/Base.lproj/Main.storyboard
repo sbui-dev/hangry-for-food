@@ -120,13 +120,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="255" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERW-81-eVP">
-                                                <rect key="frame" x="15" y="15" width="39" height="20.5"/>
+                                                <rect key="frame" x="15" y="15" width="54" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="tacos, etc" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rBJ-gj-bbq">
-                                                <rect key="frame" x="69" y="10" width="173" height="30"/>
+                                                <rect key="frame" x="84" y="10" width="158" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -193,6 +193,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="D0e-cZ-0w9" firstAttribute="width" secondItem="rBJ-gj-bbq" secondAttribute="width" id="Lzl-fd-8bd"/>
                                     <constraint firstAttribute="height" constant="150" id="oB3-s9-4ab"/>
                                 </constraints>
                             </stackView>
@@ -467,6 +468,6 @@ Maps</string>
         <image name="ui_title" width="580" height="800"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZxA-9E-aFl"/>
+        <segue reference="brW-wA-1CH"/>
     </inferredMetricsTieBreakers>
 </document>
