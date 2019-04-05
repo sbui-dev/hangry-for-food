@@ -38,7 +38,7 @@ class RestaurantData {
     /***************************************************************/
     
     func randomRestaurantData() {
-        print(dataJSON)
+
         if var totalResult = dataJSON["total"].int {
             
             if totalResult == 0 {

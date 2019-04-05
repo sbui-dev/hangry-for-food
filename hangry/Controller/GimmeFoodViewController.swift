@@ -48,7 +48,6 @@ class GimmeFoodViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("Preparing for transition")
         if segue.destination is MapViewController {
             let vc = segue.destination as? MapViewController
             vc?.restaurantData = restaurantData
@@ -63,8 +62,8 @@ class GimmeFoodViewController: UIViewController, CLLocationManagerDelegate {
         let header : [String : String] = ["Authorization" : "Bearer "]
         let searchParams = ["term" : searchOptions.term, "latitude" : currentLatitude, "longitude" : currentLongitude, "radius" : searchOptions.radius, "open_now" : searchOptions.open_now]
         
-        print("Running with params")
-        print(searchParams)
+        //print("Running with params")
+        //print(searchParams)
         if dataJSON.isEmpty {
             //print("using yelp api")
             Alamofire.request(yelpURL, method : .get, parameters : searchParams, headers : header).responseJSON {
@@ -72,7 +71,7 @@ class GimmeFoodViewController: UIViewController, CLLocationManagerDelegate {
                 if response.result.isSuccess {
                     self.dataJSON = JSON(response.result.value!)
                     self.restaurantData = RestaurantData(json : self.dataJSON)
-                    print(self.dataJSON)
+                    //print(self.dataJSON)
                     self.hangryButton.isEnabled = true
                 } else {
                     //print("Error: \(String(describing: response.result.error))")
