@@ -21,6 +21,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var restaurant_phone: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var mapButton: UIButton!
+    @IBOutlet weak var yelpButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,11 @@ class MapViewController: UIViewController {
     
     @IBAction func mapsPressed(_ sender: Any) {
         openMaps(coordinate: restaurantData!.getMapCoordinate())
+    }
+    
+    @IBAction func yelpPressed(_ sender: Any) {
+        guard let url = URL(string : restaurantData!.url) else { return }
+        UIApplication.shared.open(url)
     }
     
     //MARK: Populate UI

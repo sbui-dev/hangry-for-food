@@ -326,45 +326,56 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dvn-zP-IF7">
-                                <rect key="frame" x="0.0" y="55" width="320" height="202"/>
+                                <rect key="frame" x="0.0" y="55" width="320" height="223"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qhF-yd-lr0" userLabel="Restaurant Label View">
-                                <rect key="frame" x="0.0" y="267" width="320" height="151"/>
+                                <rect key="frame" x="0.0" y="288" width="320" height="130"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'm hangry!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zt-gy-48V">
-                                        <rect key="frame" x="15" y="0.0" width="290" height="36"/>
+                                        <rect key="frame" x="15" y="0.0" width="210" height="36"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feed me!" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnz-f4-kfT">
-                                        <rect key="frame" x="15" y="46" width="175" height="23.5"/>
+                                        <rect key="frame" x="15" y="36" width="195" height="23.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rawr!" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pwl-FS-Eap">
-                                        <rect key="frame" x="15" y="69.5" width="175" height="23.5"/>
+                                        <rect key="frame" x="15" y="59.5" width="195" height="23.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rawr!" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Zf-07-XN8" userLabel="Restaurant address3">
-                                        <rect key="frame" x="15" y="93" width="290" height="23.5"/>
+                                        <rect key="frame" x="15" y="83" width="290" height="23.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rawr!" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USc-R1-kYw" userLabel="Restaurant phone">
-                                        <rect key="frame" x="15" y="116.5" width="290" height="23.5"/>
+                                        <rect key="frame" x="15" y="106.5" width="290" height="23.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="WCe-S3-PIe">
-                                        <rect key="frame" x="205" y="46" width="100" height="100"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cbc-9u-Vyu" userLabel="Yelp Button">
+                                        <rect key="frame" x="233" y="80" width="72" height="46"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="0Iu-bD-ePG"/>
+                                            <constraint firstAttribute="width" constant="72" id="gDl-8A-WS2"/>
+                                            <constraint firstAttribute="height" constant="46" id="tqw-WX-n2J"/>
+                                        </constraints>
+                                        <state key="normal" image="Yelp_trademark_RGB_outline"/>
+                                        <connections>
+                                            <action selector="yelpPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L5z-pJ-zwU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="WCe-S3-PIe">
+                                        <rect key="frame" x="225" y="0.0" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="0Iu-bD-ePG"/>
                                             <constraint firstAttribute="width" secondItem="WCe-S3-PIe" secondAttribute="height" multiplier="1:1" id="jW8-Ki-lm4"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Baloo" family="Baloo" pointSize="20"/>
@@ -382,20 +393,22 @@ Maps</string>
                                 <constraints>
                                     <constraint firstItem="USc-R1-kYw" firstAttribute="top" secondItem="9Zf-07-XN8" secondAttribute="bottom" id="12b-Xg-zqp"/>
                                     <constraint firstItem="Pwl-FS-Eap" firstAttribute="leading" secondItem="qhF-yd-lr0" secondAttribute="leading" constant="15" id="1es-x3-G2w"/>
-                                    <constraint firstAttribute="trailing" secondItem="1zt-gy-48V" secondAttribute="trailing" constant="15" id="1f2-rP-0HL"/>
                                     <constraint firstAttribute="trailing" secondItem="WCe-S3-PIe" secondAttribute="trailing" constant="15" id="4Tx-Y2-Pv2"/>
-                                    <constraint firstAttribute="bottom" secondItem="WCe-S3-PIe" secondAttribute="bottom" constant="5" id="A0C-7F-1GJ"/>
                                     <constraint firstAttribute="trailing" secondItem="9Zf-07-XN8" secondAttribute="trailing" constant="15" id="AfW-Sb-txb"/>
                                     <constraint firstItem="USc-R1-kYw" firstAttribute="leading" secondItem="qhF-yd-lr0" secondAttribute="leading" constant="15" id="E92-uO-4BF"/>
                                     <constraint firstItem="Pwl-FS-Eap" firstAttribute="top" secondItem="gnz-f4-kfT" secondAttribute="bottom" id="EDR-Xb-dsn"/>
+                                    <constraint firstAttribute="bottom" secondItem="USc-R1-kYw" secondAttribute="bottom" id="EI6-3p-NG0"/>
                                     <constraint firstAttribute="trailing" secondItem="USc-R1-kYw" secondAttribute="trailing" constant="15" id="I2q-MG-cAq"/>
                                     <constraint firstItem="gnz-f4-kfT" firstAttribute="leading" secondItem="qhF-yd-lr0" secondAttribute="leading" constant="15" id="PHx-K3-1Zv"/>
                                     <constraint firstItem="9Zf-07-XN8" firstAttribute="leading" secondItem="qhF-yd-lr0" secondAttribute="leading" constant="15" id="PdJ-tw-D49"/>
-                                    <constraint firstItem="WCe-S3-PIe" firstAttribute="top" secondItem="gnz-f4-kfT" secondAttribute="top" id="TxS-X4-jVO"/>
+                                    <constraint firstItem="WCe-S3-PIe" firstAttribute="top" secondItem="qhF-yd-lr0" secondAttribute="top" id="TxS-X4-jVO"/>
+                                    <constraint firstItem="WCe-S3-PIe" firstAttribute="leading" secondItem="1zt-gy-48V" secondAttribute="trailing" id="UsD-NV-xnp"/>
+                                    <constraint firstItem="Cbc-9u-Vyu" firstAttribute="top" secondItem="WCe-S3-PIe" secondAttribute="bottom" id="VTo-UT-vVy"/>
                                     <constraint firstItem="1zt-gy-48V" firstAttribute="top" secondItem="qhF-yd-lr0" secondAttribute="top" id="bwV-IK-Ip5"/>
                                     <constraint firstItem="1zt-gy-48V" firstAttribute="leading" secondItem="qhF-yd-lr0" secondAttribute="leading" constant="15" id="jdu-rp-c8z"/>
-                                    <constraint firstItem="gnz-f4-kfT" firstAttribute="top" secondItem="1zt-gy-48V" secondAttribute="bottom" constant="10" id="mLu-ov-J1U"/>
+                                    <constraint firstItem="gnz-f4-kfT" firstAttribute="top" secondItem="1zt-gy-48V" secondAttribute="bottom" id="mLu-ov-J1U"/>
                                     <constraint firstItem="WCe-S3-PIe" firstAttribute="leading" secondItem="Pwl-FS-Eap" secondAttribute="trailing" constant="15" id="vVr-E0-7Xs"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cbc-9u-Vyu" secondAttribute="trailing" constant="15" id="xsB-qF-KDk"/>
                                     <constraint firstItem="9Zf-07-XN8" firstAttribute="top" secondItem="Pwl-FS-Eap" secondAttribute="bottom" id="z4q-qd-hcI"/>
                                     <constraint firstItem="WCe-S3-PIe" firstAttribute="leading" secondItem="gnz-f4-kfT" secondAttribute="trailing" constant="15" id="zuX-31-CGV"/>
                                 </constraints>
@@ -463,14 +476,16 @@ Maps</string>
                         <outlet property="restaurant_address3" destination="9Zf-07-XN8" id="fYb-yM-900"/>
                         <outlet property="restaurant_name" destination="1zt-gy-48V" id="vhw-tq-BWg"/>
                         <outlet property="restaurant_phone" destination="USc-R1-kYw" id="6IQ-bh-FFR"/>
+                        <outlet property="yelpButton" destination="Cbc-9u-Vyu" id="CxC-R3-umF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="210" y="135"/>
+            <point key="canvasLocation" x="210" y="134.1549295774648"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Yelp_trademark_RGB_outline" width="72" height="46"/>
         <image name="btn_close" width="250" height="125"/>
         <image name="btn_maps" width="150" height="150"/>
         <image name="btn_needfood" width="455" height="300"/>
@@ -480,6 +495,6 @@ Maps</string>
         <image name="ui_title" width="580" height="800"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="brW-wA-1CH"/>
+        <segue reference="3Ll-vd-etf"/>
     </inferredMetricsTieBreakers>
 </document>

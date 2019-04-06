@@ -20,6 +20,7 @@ class RestaurantData {
     var address2 : String = ""
     var address3 : String = ""
     var phone : String = ""
+    var url : String = ""
     
     var street: String = ""
     var city: String = ""
@@ -82,7 +83,7 @@ class RestaurantData {
             phone = dataJSON["businesses"][rand]["display_phone"].string!
             latitude = dataJSON["businesses"][rand]["coordinates"]["latitude"].double!
             longitude =  dataJSON["businesses"][rand]["coordinates"]["longitude"].double!
-            
+            url = dataJSON["businesses"][rand]["url"].string!
             //print(name)
             //print(address1)
             //print(address2)
