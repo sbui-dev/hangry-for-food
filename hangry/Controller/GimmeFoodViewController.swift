@@ -67,7 +67,7 @@ class GimmeFoodViewController: UIViewController, CLLocationManagerDelegate {
         //print("Running with params")
         //print(searchParams)
         if dataJSON.isEmpty {
-            print("using yelp api")
+            //print("using yelp api")
             Alamofire.request(yelpURL, method : .get, parameters : searchParams, headers : header).responseJSON {
                 response in
                 if response.result.isSuccess {
