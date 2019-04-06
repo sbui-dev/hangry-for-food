@@ -38,12 +38,14 @@ class GimmeFoodViewController: UIViewController, CLLocationManagerDelegate {
         optionsButton.layer.masksToBounds = true
         optionsButton.layer.borderWidth = 1
         optionsButton.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.09019607843, blue: 0.1137254902, alpha: 1)
-        
-        // disable button until GPS location
-        hangryButton.isEnabled = false
+
     }
     
     @IBAction func hangryPressed(_ sender: Any) {
+        getRestaurantData(completion: nextScreen)
+    }
+    
+    func nextScreen() {
         performSegue(withIdentifier: "goToMapView", sender: nil)
     }
     
@@ -57,7 +59,7 @@ class GimmeFoodViewController: UIViewController, CLLocationManagerDelegate {
     // MARK: - Networking
     /***************************************************************/
     
-    func getRestaurantData() {
+    func getRestaurantData(completion : @escaping () -> Void) {
         let yelpURL = "https://api.yelp.com/v3/businesses/search"
         let header : [String : String] = ["Authorization" : "Bearer "]
         let searchParams = ["term" : searchOptions.term, "latitude" : currentLatitude, "longitude" : currentLongitude, "radius" : searchOptions.radius, "open_now" : searchOptions.open_now]
@@ -65,14 +67,14 @@ class GimmeFoodViewController: UIViewController, CLLocationManagerDelegate {
         //print("Running with params")
         //print(searchParams)
         if dataJSON.isEmpty {
-            //print("using yelp api")
+            print("using yelp api")
             Alamofire.request(yelpURL, method : .get, parameters : searchParams, headers : header).responseJSON {
                 response in
                 if response.result.isSuccess {
                     self.dataJSON = JSON(response.result.value!)
                     self.restaurantData = RestaurantData(json : self.dataJSON)
                     //print(self.dataJSON)
-                    self.hangryButton.isEnabled = true
+                    completion()
                 } else {
                     //print("Error: \(String(describing: response.result.error))")
                     self.restaurantData?.name = "Error: Unable to connect to server"
@@ -93,7 +95,6 @@ class GimmeFoodViewController: UIViewController, CLLocationManagerDelegate {
             currentLatitude = String(location.coordinate.latitude)
             currentLongitude = String(location.coordinate.longitude)
             
-            getRestaurantData() // TODO bug - makes multiple calls when transitioning from other pages
             //print("found location")
         }
     }
