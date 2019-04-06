@@ -72,6 +72,13 @@ class MapViewController: UIViewController {
         
         mapView.setRegion(coordinateRegion, animated: true)
         
+        // remove previous annotation if any
+        let allAnnotation = self.mapView.annotations
+        if !allAnnotation.isEmpty {
+            mapView.removeAnnotation(allAnnotation[0])
+        }
+        
+        // add new annotation
         let annotation = MKPointAnnotation()
         annotation.title = restaurantData?.name
         annotation.coordinate = (restaurantData!.getMapCoordinate())
