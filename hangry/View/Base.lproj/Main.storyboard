@@ -326,13 +326,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dvn-zP-IF7">
-                                <rect key="frame" x="0.0" y="55" width="320" height="223"/>
+                                <rect key="frame" x="0.0" y="60" width="320" height="218"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qhF-yd-lr0" userLabel="Restaurant Label View">
                                 <rect key="frame" x="0.0" y="288" width="320" height="130"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'm hangry!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zt-gy-48V">
-                                        <rect key="frame" x="15" y="0.0" width="210" height="36"/>
+                                        <rect key="frame" x="15" y="0.0" width="195" height="36"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -402,7 +402,7 @@ Maps</string>
                                     <constraint firstItem="gnz-f4-kfT" firstAttribute="leading" secondItem="qhF-yd-lr0" secondAttribute="leading" constant="15" id="PHx-K3-1Zv"/>
                                     <constraint firstItem="9Zf-07-XN8" firstAttribute="leading" secondItem="qhF-yd-lr0" secondAttribute="leading" constant="15" id="PdJ-tw-D49"/>
                                     <constraint firstItem="WCe-S3-PIe" firstAttribute="top" secondItem="qhF-yd-lr0" secondAttribute="top" id="TxS-X4-jVO"/>
-                                    <constraint firstItem="WCe-S3-PIe" firstAttribute="leading" secondItem="1zt-gy-48V" secondAttribute="trailing" id="UsD-NV-xnp"/>
+                                    <constraint firstItem="WCe-S3-PIe" firstAttribute="leading" secondItem="1zt-gy-48V" secondAttribute="trailing" constant="15" id="UsD-NV-xnp"/>
                                     <constraint firstItem="Cbc-9u-Vyu" firstAttribute="top" secondItem="WCe-S3-PIe" secondAttribute="bottom" id="VTo-UT-vVy"/>
                                     <constraint firstItem="1zt-gy-48V" firstAttribute="top" secondItem="qhF-yd-lr0" secondAttribute="top" id="bwV-IK-Ip5"/>
                                     <constraint firstItem="1zt-gy-48V" firstAttribute="leading" secondItem="qhF-yd-lr0" secondAttribute="leading" constant="15" id="jdu-rp-c8z"/>
@@ -436,7 +436,7 @@ Maps</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dE1-Il-9vZ">
-                                <rect key="frame" x="5" y="20" width="60" height="30"/>
+                                <rect key="frame" x="5" y="25" width="60" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="QHS-c7-4yj"/>
                                     <constraint firstAttribute="width" constant="60" id="yF6-xC-SNs"/>
@@ -452,7 +452,7 @@ Maps</string>
                         </subviews>
                         <color key="backgroundColor" red="0.16862745100000001" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="dE1-Il-9vZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9LI-BZ-U1G"/>
+                            <constraint firstItem="dE1-Il-9vZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="9LI-BZ-U1G"/>
                             <constraint firstItem="Fdc-KQ-EaY" firstAttribute="top" secondItem="qhF-yd-lr0" secondAttribute="bottom" id="Ev5-Uh-vvH"/>
                             <constraint firstItem="dvn-zP-IF7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FuJ-f1-Tdp"/>
                             <constraint firstItem="qhF-yd-lr0" firstAttribute="top" secondItem="dvn-zP-IF7" secondAttribute="bottom" constant="10" id="KfE-Pl-sDN"/>

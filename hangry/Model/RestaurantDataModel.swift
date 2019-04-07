@@ -44,7 +44,8 @@ class RestaurantData {
             
             if totalResult == 0 {
                 name = "No results found"
-                address1 = "Try changing options"
+                address1 = "Perhaps everything is closed"
+                address2 = "Try changing options"
                 return
             }
             
@@ -87,6 +88,12 @@ class RestaurantData {
             //print(name)
             //print(address1)
             //print(address2)
+            
+            // simulated data for screenshots
+//            name = "Best Restaurant Ever"
+//            address1 = "123 Main st"
+//            address2 = dataJSON["businesses"][rand]["location"]["display_address"][1].string!
+//            phone = "(555) 555-5555"
         }
         else {
            name = "Error: No results found"
