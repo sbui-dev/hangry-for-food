@@ -96,7 +96,9 @@ class RestaurantData {
 //            phone = "(555) 555-5555"
         }
         else {
-           name = "Error: No results found"
+            name = "Error: No results found"
+            address1 = "Couldn't determine location"
+            address2 = "Please allow in privacy settings"
         }
     }
     
