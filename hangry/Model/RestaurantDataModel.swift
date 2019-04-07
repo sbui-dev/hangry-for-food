@@ -31,6 +31,8 @@ class RestaurantData {
     var latitude : Double = 0.0
     var longitude : Double = 0.0
     
+    var error : Bool = false
+    
     init(json : JSON) {
         dataJSON = json
     }
