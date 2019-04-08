@@ -22,16 +22,17 @@ class RestaurantData {
     var phone : String = ""
     var url : String = ""
     
-    var street: String = ""
-    var city: String = ""
-    var state: String = ""
-    var postalCode: String = ""
-    var country: String = ""
+    private var street: String = ""
+    private var city: String = ""
+    private var state: String = ""
+    private var postalCode: String = ""
+    private var country: String = ""
 
     var latitude : Double = 0.0
     var longitude : Double = 0.0
     
     var error : Bool = false
+    private var lastRand : Int = -1
     
     init(json : JSON) {
         dataJSON = json
@@ -48,23 +49,28 @@ class RestaurantData {
                 name = "No results found"
                 address1 = "Perhaps everything is closed"
                 address2 = "Try changing options"
+                error = true
                 return
             }
             
-            var rand = 0
+            var rand = -1
             
             if totalResult != 1 {
                 // offset by 1
                 totalResult -= 1
                 
-                // randomly select an entry
-                rand = Int.random(in: 0 ... totalResult)
+                // randomly select an entry that isn't the last entry shown
+                repeat {
+                    rand = Int.random(in: 0 ... totalResult)
+                } while lastRand == rand
+                
+                lastRand = rand
                 
                 // catch case with nil data
                 while dataJSON["businesses"][rand]["name"].string == nil {
                     rand = Int.random(in: 0 ... totalResult)
                 }
-                
+                //print("last random number = \(lastRand)")
                 //print("random number = \(rand)")
             }
             
@@ -101,6 +107,7 @@ class RestaurantData {
             name = "Error: No results found"
             address1 = "Couldn't determine location"
             address2 = "Please allow in privacy settings"
+            error = true
         }
     }
     
