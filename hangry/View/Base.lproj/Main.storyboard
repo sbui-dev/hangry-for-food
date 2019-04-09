@@ -98,7 +98,7 @@
                                 <rect key="frame" x="30" y="70" width="260" height="428"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Options" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J6g-bR-3qK">
-                                <rect key="frame" x="60" y="80" width="200" height="35"/>
+                                <rect key="frame" x="60" y="80" width="200" height="47.5"/>
                                 <fontDescription key="fontDescription" name="Baloo" family="Baloo" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -114,7 +114,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ViY-xq-qe4">
-                                <rect key="frame" x="70" y="115" width="200" height="150"/>
+                                <rect key="frame" x="70" y="127.5" width="200" height="150"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i9x-sQ-Lyp">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
@@ -343,7 +343,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="BPc-Rc-iZ0"/>
                                     <constraint firstItem="dE1-Il-9vZ" firstAttribute="top" secondItem="2hC-Uv-wLd" secondAttribute="top" constant="2" id="een-oy-AOf"/>

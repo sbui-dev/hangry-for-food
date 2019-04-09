@@ -28,10 +28,10 @@ class RestaurantData {
     private var postalCode: String = ""
     private var country: String = ""
 
-    var latitude : Double = 0.0
-    var longitude : Double = 0.0
+    private var latitude : Double = 0.0
+    private var longitude : Double = 0.0
     
-    var error : Bool = false
+    private var error : Bool = false
     private var lastRand : Int = -1
     
     init(json : JSON) {
@@ -48,7 +48,7 @@ class RestaurantData {
             if totalResult == 0 {
                 name = "No results found"
                 address1 = "Perhaps everything is closed"
-                address2 = "Try changing options"
+                address2 = "Try changing search options"
                 error = true
                 return
             }

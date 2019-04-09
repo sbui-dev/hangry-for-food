@@ -15,11 +15,11 @@ import SwiftyJSON
 class GimmeFoodViewController: UIViewController, CLLocationManagerDelegate {
     
     var dataJSON : JSON = []
-    var currentLatitude : String = ""
-    var currentLongitude : String = ""
+    private var currentLatitude : String = ""
+    private var currentLongitude : String = ""
     var restaurantData : RestaurantData?
     
-    let locationManager = CLLocationManager()
+    private let locationManager = CLLocationManager()
     var searchOptions = SearchOptionsData()
  
     @IBOutlet weak var optionsButton: UIButton!
@@ -61,7 +61,7 @@ class GimmeFoodViewController: UIViewController, CLLocationManagerDelegate {
     
     func getRestaurantData(completion : @escaping () -> Void) {
         let yelpURL = "https://api.yelp.com/v3/businesses/search"
-        let header : [String : String] = ["Authorization" : "Bearer "]
+        let header : [String : String] = ["Authorization" : "Bearer 5Q2kfy87piLkOggEBScFBbEuQYe1xB8p0fGvOZJvMGPNpr5UppfZQL3HbAEFbzFpBEGi3F_TGhlH1pheY_kMZIw0NM0cckMB62l-fOv7onO5MsAMLrhrA5dXIWKgXHYx"]
         let searchParams = ["term" : searchOptions.term, "latitude" : currentLatitude, "longitude" : currentLongitude, "radius" : searchOptions.radius, "open_now" : searchOptions.open_now]
         
         //print("Running with params")
