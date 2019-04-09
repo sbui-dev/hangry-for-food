@@ -9,22 +9,26 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func privacyPressed(_ sender: Any) {
+        guard let url = URL(string : "http://sbui.net/hangry/privacy_policy.html") else { return }
+        UIApplication.shared.open(url)
     }
-    */
-
+    
+    @IBAction func termsPressed(_ sender: Any) {
+        guard let url = URL(string : "http://sbui.net/hangry/terms_and_conditions.html") else { return }
+        UIApplication.shared.open(url)
+        
+    }
+    
+    @IBAction func softwarePressed(_ sender: Any) {
+        guard let url = URL(string : "http://sbui.net/hangry/3rd_party_license.md") else { return }
+        UIApplication.shared.open(url)
+    }
 }
