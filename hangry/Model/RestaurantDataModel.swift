@@ -53,7 +53,7 @@ class RestaurantData {
                 return
             }
             
-            var rand = -1
+            var rand = 0
             
             if totalResult != 1 {
                 // offset by 1
@@ -73,6 +73,8 @@ class RestaurantData {
                 //print("last random number = \(lastRand)")
                 //print("random number = \(rand)")
             }
+            
+            //print("random number = \(rand)")
             
             // get data from entry
             name = dataJSON["businesses"][rand]["name"].string!
