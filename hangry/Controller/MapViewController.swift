@@ -90,6 +90,11 @@ class MapViewController: UIViewController {
         annotation.coordinate = (restaurantData!.getMapCoordinate())
         
         mapView.addAnnotation(annotation)
+        
+        if restaurantData!.error {
+            mapButton.isEnabled = false
+            yelpButton.isEnabled = false
+        }
     }
 }
 

@@ -31,7 +31,7 @@ class RestaurantData {
     private var latitude : Double = 0.0
     private var longitude : Double = 0.0
     
-    private var error : Bool = false
+    var error : Bool = false
     private var lastRand : Int = -1
     
     init(json : JSON) {
@@ -101,7 +101,7 @@ class RestaurantData {
             
             // simulated data for screenshots
 //            name = "Best Restaurant Ever"
-//            address1 = "123 Main st"
+//            address1 = "123 Main St"
 //            address2 = dataJSON["businesses"][rand]["location"]["display_address"][1].string!
 //            phone = "(555) 555-5555"
         }
