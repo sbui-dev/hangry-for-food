@@ -46,9 +46,10 @@ class RestaurantData {
         if var totalResult = dataJSON["total"].int {
             
             if totalResult == 0 {
-                name = "No results found"
-                address1 = "Perhaps everything is closed"
-                address2 = "Try changing search options"
+                name = "No results found."
+                address1 = "Perhaps everything within"
+                address2 = "walking distance is closed."
+                address3 = "Try changing search options."
                 error = true
                 return
             }
@@ -106,9 +107,9 @@ class RestaurantData {
 //            phone = "(555) 555-5555"
         }
         else {
-            name = "Error: No results found"
-            address1 = "Couldn't determine location"
-            address2 = "Please allow in privacy settings"
+            name = "Error: No results found."
+            address1 = "Couldn't determine location."
+            address2 = "Please allow in privacy settings."
             error = true
         }
     }
