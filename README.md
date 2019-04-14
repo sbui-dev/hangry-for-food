@@ -8,3 +8,5 @@ Can't decide on what to eat? Getting hangry because of indecision? Let Hangry fo
 Simple iOS app that displays a random restaurant within walking distance that's is still open
 
 **Note: A yelp fusion api key is needed for the app to work**
+
+Implementation write up: https://medium.com/@buisteven/creating-my-first-ios-app-75bf51fc99b4﻿
